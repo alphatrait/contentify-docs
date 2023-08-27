@@ -21,12 +21,12 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:hi@contentify.app"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://contentify.app"
   },
   "tabs": [
     {
@@ -41,14 +41,14 @@
       "url": "https://mintlify.com/docs"
     },
     {
-      "name": "Community",
+      "name": "Community (coming soon)",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "#"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://contentify.app/dev-blog"
     }
   ],
   "navigation": [
