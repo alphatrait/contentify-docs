@@ -36,9 +36,9 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Get Access",
+      "icon": "address-card",
+      "url": "https://contentify.app/developer-access"
     },
     {
       "name": "Community (coming soon)",
@@ -46,7 +46,7 @@
       "url": "#"
     },
     {
-      "name": "Blog",
+      "name": "Developer Blog",
       "icon": "newspaper",
       "url": "https://contentify.app/dev-blog"
     }
@@ -75,8 +75,8 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/ContentifyApp",
+    "linkedin": "https://www.linkedin.com/company/contentify-app/",
+    "instagram": "https://www.instagram.com/contentify.app/"
   }
 }
