@@ -1,10 +1,10 @@
----
-title: "Get User"
-api: "GET https://api.mintlify.com/api/user"
-description: "This endpoint gets or creates a new user."
----
-
 ### Body
+
+As the name suggest you can turn text into speech using this API. You can also specify the language.
+
+<ParamField body="auth" type="string">
+  This is the name of the user group.
+</ParamField>
 
 <ParamField body="name" type="string">
   This is the name of the user group.
@@ -80,6 +80,19 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
     "properties": {"filterValue": "value"}
 }'
 ```
+
+```bash Example Request
+curl --location --request GET 'https://api.mintlify.com/api/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--data-raw '{
+    "user_group_id": "example_1",
+    "name": "Example 1",
+    "mapping": {"40": "213", "134": "386"},
+    "properties": {"filterValue": "value"}
+}'
+```
+
 
 </RequestExample>
 

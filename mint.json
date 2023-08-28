@@ -43,45 +43,56 @@
     },
     {
       "name": "Personalized Video",
-      "url": "personalized-vide"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Get Access",
-      "icon": "address-card",
-      "url": "https://contentify.app/developer-access"
-    },
-    {
-      "name": "Community (coming soon)",
-      "icon": "slack",
-      "url": "#"
-    },
-    {
-      "name": "Developer Blog",
-      "icon": "newspaper",
-      "url": "https://contentify.app/dev-blog"
+      "url": "personalized-video"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["introduction", "videos", "examples"]
     },  
     {
-      "group": "API Documentation",
+      "group": "Get Started",
       "pages": ["essentials/authentication"]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "essentials/endpoint/get",
-        "essentials/endpoint/create",
-        "essentials/endpoint/update",
-        "essentials/endpoint/delete"
+        "essentials/endpoint/text-to-speech"
+      ]
+    },
+    {
+      "group": "Get Started",
+      "pages": ["blog-posts/authentication"]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "blog-posts/endpoint/text-to-speech"
+      ]
+    },
+    {
+      "group": "Get Started",
+      "pages": ["sm-posts/authentication"]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "sm-posts/endpoint/text-to-speech"
+      ]
+    },
+    {
+      "group": "Get Started",
+      "pages": ["personalized-video/authentication"]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "personalized-video/endpoint/text-to-speech"
       ]
     }
   ],
+
   "footerSocials": {
     "twitter": "https://twitter.com/ContentifyApp",
     "linkedin": "https://www.linkedin.com/company/contentify-app/",
