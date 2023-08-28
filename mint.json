@@ -30,8 +30,20 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Essentials",
+      "url": "essentials"
+    },
+    {
+      "name": "Blog Posts",
+      "url": "blog-posts"
+    },
+    {
+      "name": "Social Media Posts",
+      "url": "sm-posts"
+    },
+    {
+      "name": "Personalized Video",
+      "url": "personalized-vide"
     }
   ],
   "anchors": [
@@ -55,22 +67,18 @@
     {
       "group": "Get Started",
       "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
+    },  
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": ["essentials/authentication"]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "essentials/endpoint/get",
+        "essentials/endpoint/create",
+        "essentials/endpoint/update",
+        "essentials/endpoint/delete"
       ]
     }
   ],
