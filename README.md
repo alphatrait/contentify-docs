@@ -1,4 +1,4 @@
 # Contentify Dev Docs
 
-Visit [Contentify Dev Docs](https://docs.contentify.app/)
+Visit [Contentify Dev Docs](https://dev.contentify.app/)
 
