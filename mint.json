@@ -30,10 +30,6 @@
   },
   "tabs": [
     {
-      "name": "Essentials",
-      "url": "essentials"
-    },
-    {
       "name": "Blog Posts",
       "url": "blog-posts"
     },
@@ -49,50 +45,63 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "videos", "examples"]
-    },  
-    {
-      "group": "Get Started",
-      "pages": ["essentials/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
       "pages": [
-        "essentials/endpoint/text-to-speech"
+        "introduction",
+        "videos",
+        "examples"
       ]
     },
     {
       "group": "Get Started",
-      "pages": ["blog-posts/authentication"]
+      "pages": [
+        "blog-posts/authentication"
+      ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
-        "blog-posts/endpoint/text-to-speech"
+        {
+          "group": "CTA",
+          "icon": "bullseye-pointer",
+          "pages": [
+            "blog-posts/endpoint/cta-text", "blog-posts/endpoint/cta-section"
+          ]
+        },
+        "blog-posts/endpoint/key-takeaways",
+        {
+          "group": "Related Blogs",
+          "icon": "newspaper",
+          "pages": [
+            "blog-posts/endpoint/related-blogs-section", "blog-posts/endpoint/list-of-blogs"
+          ]
+        }
       ]
     },
     {
       "group": "Get Started",
-      "pages": ["sm-posts/authentication"]
+      "pages": [
+        "sm-posts/authentication"
+      ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
         "sm-posts/endpoint/text-to-speech"
       ]
     },
     {
       "group": "Get Started",
-      "pages": ["personalized-video/authentication"]
+      "pages": [
+        "personalized-video/authentication"
+      ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
         "personalized-video/endpoint/text-to-speech"
       ]
     }
   ],
-
   "footerSocials": {
     "twitter": "https://twitter.com/ContentifyApp",
     "linkedin": "https://www.linkedin.com/company/contentify-app/",

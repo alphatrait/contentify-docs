@@ -1,0 +1,143 @@
+---
+title: "CTA Section"
+description: "Generate call to action section for your blogs."
+icon: 'toggle-large-on'
+---
+
+### Body
+
+This endpoint will generate html for your CTA section.
+
+<ParamField body="text" type="string">
+This is the the body text. You can generate this using the [CTA Text Generator](/blog-posts/endpoint/cta-text) endpoint.
+</ParamField>
+
+<ParamField body="color" type="string">
+Use HEX color code and this will generate gradient background color, text color, and button background and text colors.
+</ParamField>
+
+<ParamField body="header" type="string">
+This is the the header text. You can generate this using the [CTA Text Generator](/blog-posts/endpoint/cta-text) endpoint.
+</ParamField>
+
+<ParamField body="button_text" type="string">
+This is the the button text. You can generate this using the [CTA Text Generator](/blog-posts/endpoint/cta-text) endpoint.
+</ParamField>
+
+<ParamField body="link" type="string">
+This is the CTA link. Where do you want your visitors to go when they click on the CTA button?
+</ParamField>
+
+### Response
+
+<ResponseField name="cta" type="string">
+This is the generated html for your CTA section. It does need some clean up before you can use it on your blog.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  https://your-domain.com/cta \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "text": "Sample Text",
+    "color": "red",
+    "header": "Sample Header",
+    "button_text": "Click Me",
+    "link": "https://example.com"
+}'
+
+```
+
+```bash PHP
+$url = 'https://your-domain.com/cta';
+$data = array(
+    'text' => 'Sample Text',
+    'color' => 'red',
+    'header' => 'Sample Header',
+    'button_text' => 'Click Me',
+    'link' => 'https://example.com'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = 'https://your-domain.com/cta'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'text': 'Sample Text',
+    'color': 'red',
+    'header': 'Sample Header',
+    'button_text': 'Click Me',
+    'link': 'https://example.com'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/cta';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    text: 'Sample Text',
+    color: 'red',
+    header: 'Sample Header',
+    button_text: 'Click Me',
+    link: 'https://example.com'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+		"cta": "<some HTML tags>"
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

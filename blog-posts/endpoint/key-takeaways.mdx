@@ -1,0 +1,112 @@
+---
+title: "Key Takeaways"
+description: "Generate Key Takeaways Section"
+icon: 'key'
+---
+
+### Body
+
+This endpoint will take the url and generate 3 suggested texts for the call to action header, body, and button text.
+
+<ParamField body="text" type="string">
+    This is your blog text.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="key_takeaways" type="string">
+This is the generated html for your key takeaways section. It does need some clean up before you can use it on your blog.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  https://your-domain.com/key-takeaways \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "text": "Sample Key Takeaways Text"
+}'
+
+```
+
+```bash PHP
+$url = 'https://your-domain.com/key-takeaways';
+$data = array(
+    'text' => 'Sample Key Takeaways Text'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = 'https://your-domain.com/key-takeaways'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'text': 'Sample Key Takeaways Text'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/key-takeaways';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    text: 'Sample Key Takeaways Text'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response 
+{
+	"key_takeaways": "<some HTML tags>"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

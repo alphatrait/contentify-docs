@@ -1,0 +1,127 @@
+---
+title: "Related Blogs Section"
+description: "Generate Related Blogs Section"
+icon: 'blog'
+---
+
+### Body
+
+This endpoint will take the url and generate 3 suggested texts for the call to action header, body, and button text.
+
+<ParamField body="blog" type="string">
+    This is the original blog text.
+</ParamField>
+
+<ParamField body="articles_list" type="string">
+    List of the articles that you want to find related blogs from. The format is not important as long as it's a string.
+</ParamField>
+
+<ParamField body="border_radius" type="number">
+    The images and buttons will have a border radius of this value.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="related_articles" type="string">
+    The related section in HTML format. The HTML response needs some clean up before you can use it in your website.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  https://your-domain.com/related-articles \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "blog": "Sample Blog Title",
+    "articles_list": ["Article 1", "Article 2", "Article 3"],
+    "border-radius": "5px"
+}'
+
+```
+
+```bash PHP
+$url = 'https://your-domain.com/related-articles';
+$data = array(
+    'blog' => 'Sample Blog Title',
+    'articles_list' => array('Article 1', 'Article 2', 'Article 3'),
+    'border-radius' => '5px'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = 'https://your-domain.com/related-articles'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'blog': 'Sample Blog Title',
+    'articles_list': ['Article 1', 'Article 2', 'Article 3'],
+    'border-radius': '5px'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/related-articles';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    blog: 'Sample Blog Title',
+    articles_list: ['Article 1', 'Article 2', 'Article 3'],
+    'border-radius': '5px'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response 
+{
+	"key_takeaways": "<some HTML tags>"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

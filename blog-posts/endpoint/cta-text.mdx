@@ -1,0 +1,144 @@
+---
+title: "CTA Text"
+description: "Generate call to action header, body and button text"
+icon: 'text'
+---
+
+### Body
+
+This endpoint will take the url and generate 3 suggested texts for the call to action header, body, and button text.
+
+<ParamField body="url" type="string">
+  This is the CTA url where you want the user to be redirected to when they click on the button.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="button" type="string">
+  This is the button text.
+</ResponseField>
+
+<ResponseField name="header" type="string">
+  This is the header text.
+</ResponseField>
+
+<ResponseField name="text" type="string">
+  This is the body text.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+     -H "X-API-Key: YOUR_API_KEY_HERE" \
+     -H "Content-Type: application/json" \
+     -d '{"url": "http://example.com"}' \
+     http://your-api-domain.com/cta-text
+
+```
+
+```bash PHP
+$url = 'https://your-domain.com/cta-text';
+$data = array(
+    'url' => 'https://example.com'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+headers = {
+    'X-API-Key': 'YOUR_API_KEY_HERE',
+    'Content-Type': 'application/json'
+}
+
+data = {
+    'url': 'http://example.com'
+}
+
+response = requests.post('http://your-api-domain.com/cta-text', headers=headers, json=data)
+
+if response.status_code == 201:
+    cta_text = response.json()['cta_text']
+    print(cta_text)
+else:
+    print(response.json()['error'])
+
+
+```
+
+```bash JavaScript
+const url = 'http://your-api-domain.com/cta-text';
+const data = {
+    url: 'http://example.com'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'X-API-Key': 'YOUR_API_KEY_HERE',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => {
+    if (data.cta_text) {
+        console.log(data.cta_text);
+    } else {
+        console.error(data.error);
+    }
+})
+.catch(error => console.error('Error:', error));
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response 
+{
+	"cta_text": {
+		"cta1": {
+			"button": "Sign up now",
+			"header": "Sign up for our Meal Prep Service",
+			"text": "Enjoy chef-crafted fresh, healthy, and ready-to-eat meals throughout the week. Choose the one which fits your goals and lifestyle."
+		},
+		"cta2": {
+			"button": "Choose your plan",
+			"header": "Get Started with Houston Meal Prep",
+			"text": "Choose from our variety of meal plans. Free delivery all over Houston. Starting at $12.99/Meal."
+		},
+		"cta3": {
+			"button": "Order Now",
+			"header": "Boost Your Health with Our Pineapple Ginger Shot",
+			"text": "Try our powerful immune and digestive system booster. Free delivery all over Houston."
+		}
+	}
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
