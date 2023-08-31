@@ -29,7 +29,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "urls": ["url1", "url2", "url3"]
+    "urls": "https://example-article-url.com"
 }'
 
 ```
@@ -37,7 +37,7 @@ curl -X POST \
 ```bash PHP
 $url = 'https://your-domain.com/list-of-articles';
 $data = array(
-    'urls' => array('url1', 'url2', 'url3')
+    'urls' => 'https://example-article-url.com'
 );
 
 $ch = curl_init($url);
@@ -63,7 +63,7 @@ headers = {
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    'urls': ['url1', 'url2', 'url3']
+    'urls': 'https://example-article-url.com'
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -78,7 +78,7 @@ const headers = {
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    urls: ['url1', 'url2', 'url3']
+    urls: 'https://example-article-url.com'
 };
 
 fetch(url, {
