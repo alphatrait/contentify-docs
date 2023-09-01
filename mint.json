@@ -40,6 +40,10 @@
     {
       "name": "Personalized Video",
       "url": "personalized-video"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
     }
   ],
   "navigation": [
@@ -99,6 +103,24 @@
       "group": "Endpoints",
       "pages": [
         "personalized-video/endpoint/text-to-speech"
+      ]
+    },
+    {
+      "group": "Get Started",
+      "pages": [
+        "integrations/authentication"
+      ]
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        {
+          "group": "WordPress",
+          "icon": "wordpress",
+          "pages": [
+            "integrations/endpoint/all-blogs", "integrations/endpoint/create-post", "integrations/endpoint/update-blog", "integrations/endpoint/get-website-title"
+          ]
+        }
       ]
     }
   ],
