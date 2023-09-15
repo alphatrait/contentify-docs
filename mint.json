@@ -68,7 +68,8 @@
           "group": "CTA",
           "icon": "bullseye-pointer",
           "pages": [
-            "blog-posts/endpoint/cta-text", "blog-posts/endpoint/cta-section"
+            "blog-posts/endpoint/cta-text", 
+            "blog-posts/endpoint/cta-section"
           ]
         },
         "blog-posts/endpoint/key-takeaways",
@@ -76,7 +77,8 @@
           "group": "Related Blogs",
           "icon": "newspaper",
           "pages": [
-            "blog-posts/endpoint/related-blogs-section", "blog-posts/endpoint/list-of-blogs"
+            "blog-posts/endpoint/related-blogs-section", 
+            "blog-posts/endpoint/list-of-blogs"
           ]
         }
       ]
@@ -88,12 +90,6 @@
       ]
     },
     {
-      "group": "Endpoints",
-      "pages": [
-        "sm-posts/endpoint/text-to-speech"
-      ]
-    },
-    {
       "group": "Get Started",
       "pages": [
         "personalized-video/authentication"
@@ -102,7 +98,20 @@
     {
       "group": "Endpoints",
       "pages": [
-        "personalized-video/endpoint/text-to-speech"
+        {
+          "group": "Image Posts",
+          "icon": "image",
+          "pages": [
+            "sm-posts/endpoint/only-image",
+            "sm-posts/endpoint/solid-background",
+            "sm-posts/endpoint/gradient-background",
+            "sm-posts/endpoint/bottom-gradient-image", 
+            "sm-posts/endpoint/top-gradient-image", 
+            "sm-posts/endpoint/bottom-solid-image", 
+            "sm-posts/endpoint/glass-over-image", 
+            "sm-posts/endpoint/meme"
+          ]
+        }
       ]
     },
     {
@@ -118,7 +127,10 @@
           "group": "WordPress",
           "icon": "wordpress",
           "pages": [
-            "integrations/endpoint/all-blogs", "integrations/endpoint/create-post", "integrations/endpoint/update-blog", "integrations/endpoint/get-website-title"
+            "integrations/endpoint/all-blogs", 
+            "integrations/endpoint/create-post", 
+            "integrations/endpoint/update-blog", 
+            "integrations/endpoint/get-website-title"
           ]
         }
       ]

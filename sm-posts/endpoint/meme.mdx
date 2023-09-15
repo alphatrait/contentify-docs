@@ -1,0 +1,114 @@
+
+<img height="200" src="../images/meme.png" className="rounded-xl"/>
+
+### Body
+
+Generate social media image post with text over gradient background.
+
+<ParamField body="text" type="string">
+  The text to generate the meme from. Example: "Hello World"
+</ParamField>
+
+<ParamField body="font" type="string">
+  Your desired font. Example: Arial
+</ParamField>
+
+
+### Response
+
+<ResponseField name="meme_post" type="string">
+  The post URL.
+</ResponseField>
+
+<RequestExample>
+
+
+```bash cURL
+curl -X POST \
+  https://your-domain.com/cta \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "text": "hello word",
+    "font": "Arial, sans-serif"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = 'https://your-domain.com/cta';
+$data = array(
+    "text" => "hello word",
+    "font" => "Arial, sans-serif"
+
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = 'https://your-domain.com/cta'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "text": "hello word",
+    "font": "Arial, sans-serif"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/cta';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "text": "hello word",
+    "font": "Arial, sans-serif"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "meme_post": "https://ai.contentify.app/some-image.jpg",
+}
+```
+
+</ResponseExample>

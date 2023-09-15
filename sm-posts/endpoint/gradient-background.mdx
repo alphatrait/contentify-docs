@@ -1,0 +1,146 @@
+
+<img height="200" src="../images/gradient-background.png" className="rounded-xl"/>
+
+
+### Body
+
+Generate social media image post with text over gradient background.
+
+<ParamField body="size" type="string">
+  Enter ratios 1:1 4:5 9:16 or 16:9
+</ParamField>
+
+<ParamField body="color" type="string">
+  Use HEX color with or wothout alpha. Example: #ff0000 or #ff000080
+</ParamField>
+
+<ParamField body="font" type="string">
+  Your desired font. Example: Arial
+</ParamField>
+
+<ParamField body="brand_name" type="string">
+  Your brand name for watermark. Example: Contentify
+</ParamField>
+
+<ParamField body="guildlines" type="string">
+  Any guildlines to consider while generating the post. Example: No political posts
+</ParamField>
+
+<ParamField body="source" type="string">
+  Source text to generate social media post from. Example: "Hello World"
+</ParamField>
+
+
+### Response
+
+<ResponseField name="solid_background_post" type="string">
+  The post URL.
+</ResponseField>
+
+<RequestExample>
+
+
+```bash cURL
+curl -X POST \
+  https://your-domain.com/cta \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "source": "hello word"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = 'https://your-domain.com/cta';
+$data = array(
+    "size" => "4:5",
+    "color" => "#ff0000",
+    "font" => "Arial, sans-serif",
+    "brand_name" => "Laredo ER",
+    "guidelines" => "No political content",
+    "source" => "hello word"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = 'https://your-domain.com/cta'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "source": "hello word"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/cta';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "source": "hello word"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "solid_background_post": "https://ai.contentify.app/some-image.jpg",
+}
+```
+
+</ResponseExample>
