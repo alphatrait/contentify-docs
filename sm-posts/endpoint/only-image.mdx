@@ -1,101 +1,127 @@
-### Body
-
-As the name suggest you can turn text into speech using this API. You can also specify the language.
-
 <img height="200" src="https://mintlify.s3-us-west-1.amazonaws.com/contentify/images/only-image.png" className="rounded-xl"/>
 
+### Body
 
-<ParamField body="auth" type="string">
-  This is the name of the user group.
+Generate image only social media post with no text.
+
+
+<ParamField body="size" type="string">
+  Enter ratios 1:1 4:5 9:16 or 16:9
 </ParamField>
 
-<ParamField body="name" type="string">
-  This is the name of the user group.
+<ParamField body="guildlines" type="string">
+  Any guildlines to consider while generating the post. Example: No political posts
 </ParamField>
 
-<ParamField body="user_group_id" type="string">
-  This is the ID you use to identify this user group in your database.
+<ParamField body="theme" type="string">
+  Your desired theme for image generation. Example: light blue
 </ParamField>
 
-<ParamField body="mapping" type="object">
-  This is a JSON mapping of schema id to either the data source that this user group should be
-  associated with or id of the datasource you provided when creating it.
+<ParamField body="image" type="string">
+  Your image URL or use "generated" to generate image from text
 </ParamField>
 
-<ParamField body="properties" type="object">
-  This is a JSON object for properties assigned to this user group. These will be accessible through
-  variables in the dashboards and SQL editor
+<ParamField body="source" type="string">
+  Source text to generate social media post from. Example: "Hello World"
 </ParamField>
+
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
-
-<ResponseField name="new_user_group" type="boolean">
-  Indicates whether a new user group was created.
-</ResponseField>
-
-<ResponseField name="user_group" type="object">
-
-The contents of the user group
-
-<Expandable title="Toggle object">
-
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this information, since
-  you will not need to use it.
-</ResponseField>
-
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be used to identify
-  which user group is viewing the dashboard. You should save this on your end to use when rendering
-  an embedded dashboard.
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
-
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
-
-<ResponseField name="properties" type="JSON or null">
-  This is the properties object if it was provided in the request body
-</ResponseField>
-
-</Expandable>
-
+<ResponseField name="top_gradient_image_post" type="string">
+  The post URL.
 </ResponseField>
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
+```bash cURL
+curl -X POST \
+  https://your-domain.com/cta \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "size": "4:5",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
 }'
+
 ```
 
-```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
-}'
+```bash PHP
+<?php
+$url = 'https://your-domain.com/cta';
+$data = array(
+    "size" => "4:5",
+    "guidelines" => "No political content",
+    "theme" => "light blue",
+    "image" => "generated",
+    "source" => "hello word"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
 ```
 
+```bash Python
+import requests
+
+url = 'https://your-domain.com/cta'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "size": "4:5",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = 'https://your-domain.com/cta';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "size": "4:5",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
 
 </RequestExample>
 
@@ -103,14 +129,7 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+  "top_gradient_image_post": "https://ai.contentify.app/some-image.jpg",
 }
 ```
 
