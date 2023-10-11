@@ -48,7 +48,7 @@ Generate social media image post with text over solid background at the bottom o
 
 ```bash cURL
 curl -X POST \
-  https://your-domain.com/cta \
+  <BASE_URL>/bottom-solid-image \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -66,7 +66,7 @@ curl -X POST \
 
 ```bash PHP
 <?php
-$url = 'https://your-domain.com/cta';
+$url = '<BASE_URL>/bottom-solid-image';
 $data = array(
     "size" => "4:5",
     "color" => "#ff0000",
@@ -98,7 +98,7 @@ echo $response;
 ```bash Python
 import requests
 
-url = 'https://your-domain.com/cta'
+url = '<BASE_URL>/bottom-solid-image'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -120,7 +120,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = 'https://your-domain.com/cta';
+const url = '<BASE_URL>/bottom-solid-image';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'

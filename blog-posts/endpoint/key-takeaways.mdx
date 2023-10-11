@@ -24,7 +24,7 @@ This is the generated html for your key takeaways section. It does need some cle
 
 ```bash cURL
 curl -X POST \
-  https://your-domain.com/key-takeaways \
+  <BASE_URL>/key-takeaways \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -34,7 +34,7 @@ curl -X POST \
 ```
 
 ```bash PHP
-$url = 'https://your-domain.com/key-takeaways';
+$url = '<BASE_URL>/key-takeaways';
 $data = array(
     'text' => 'Sample Key Takeaways Text'
 );
@@ -56,7 +56,7 @@ curl_close($ch);
 ```bash Python
 import requests
 
-url = 'https://your-domain.com/key-takeaways'
+url = '<BASE_URL>/key-takeaways'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -71,7 +71,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = 'https://your-domain.com/key-takeaways';
+const url = '<BASE_URL>/key-takeaways';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'

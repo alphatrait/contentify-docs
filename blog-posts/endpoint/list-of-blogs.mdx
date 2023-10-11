@@ -23,7 +23,7 @@ This is the list of blogs from the external website or websites.
 
 ```bash cURL
 curl -X POST \
-  https://your-domain.com/list-of-articles \
+  <BASE_URL>/list-of-articles \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -33,7 +33,7 @@ curl -X POST \
 ```
 
 ```bash PHP
-$url = 'https://your-domain.com/list-of-articles';
+$url = '<BASE_URL>/list-of-articles';
 $data = array(
     'urls' => 'https://example-article-url.com'
 );
@@ -55,7 +55,7 @@ curl_close($ch);
 ```bash Python
 import requests
 
-url = 'https://your-domain.com/list-of-articles'
+url = '<BASE_URL>/list-of-articles'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -70,7 +70,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = 'https://your-domain.com/list-of-articles';
+const url = '<BASE_URL>/list-of-articles';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'

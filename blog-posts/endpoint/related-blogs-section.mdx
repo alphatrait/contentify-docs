@@ -31,7 +31,7 @@ This endpoint will take the url and generate 3 suggested texts for the call to a
 
 ```bash cURL
 curl -X POST \
-  https://your-domain.com/related-articles \
+  <BASE_URL>/related-articles \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -43,7 +43,7 @@ curl -X POST \
 ```
 
 ```bash PHP
-$url = 'https://your-domain.com/related-articles';
+$url = '<BASE_URL>/related-articles';
 $data = array(
     'blog' => 'Sample Blog Title',
     'articles_list' => array('Article 1', 'Article 2', 'Article 3'),
@@ -67,7 +67,7 @@ curl_close($ch);
 ```bash Python
 import requests
 
-url = 'https://your-domain.com/related-articles'
+url = '<BASE_URL>/related-articles'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -84,7 +84,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = 'https://your-domain.com/related-articles';
+const url = '<BASE_URL>/related-articles';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'

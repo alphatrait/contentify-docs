@@ -38,7 +38,7 @@ This is the generated html for your CTA section. It does need some clean up befo
 
 ```bash cURL
 curl -X POST \
-  https://your-domain.com/cta \
+  <BASE_URL>/cta \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -52,7 +52,7 @@ curl -X POST \
 ```
 
 ```bash PHP
-$url = 'https://your-domain.com/cta';
+$url = '<BASE_URL>/cta';
 $data = array(
     'text' => 'Sample Text',
     'color' => 'red',
@@ -78,7 +78,7 @@ curl_close($ch);
 ```bash Python
 import requests
 
-url = 'https://your-domain.com/cta'
+url = '<BASE_URL>/cta'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -97,7 +97,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = 'https://your-domain.com/cta';
+const url = '<BASE_URL>/cta';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
