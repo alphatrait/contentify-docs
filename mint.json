@@ -111,6 +111,13 @@
             "sm-posts/endpoint/glass-over-image", 
             "sm-posts/endpoint/meme"
           ]
+        },
+        {
+          "group": "Video Posts",
+          "icon": "video",
+          "pages": [
+            "sm-posts/endpoint/sample-video"
+          ]
         }
       ]
     },
