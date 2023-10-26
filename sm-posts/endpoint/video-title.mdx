@@ -1,0 +1,118 @@
+
+### Body
+
+Generate title/caption for a video.
+
+<ParamField body="source" type="string">
+  The video script or source text to generate the title/caption from.
+</ParamField>
+
+<ParamField body="guildlines" type="string">
+  Optional: Any guildlines to consider while generating the post. Example: No political posts
+</ParamField>
+
+<ParamField body="tone" type="string">
+  Optional: What tone should the post have? Example: Funny, Serious, Sarcastic, etc.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="video_title" type="string">
+  A string containing the title/caption for the video.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/generate-video-title \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "source": "Your_Source_Value",
+    "guidelines": "Your_Guidelines_Value",
+    "tone": "Your_Tone_Value"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/generate-video-title';
+$data = array(
+    "source" => "Your_Source_Value",
+    "guidelines" => "Your_Guidelines_Value",
+    "tone" => "Your_Tone_Value"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/generate-video-title'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "source": "Your_Source_Value",
+    "guidelines": "Your_Guidelines_Value",
+    "tone": "Your_Tone_Value"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/generate-video-title';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "source": "Your_Source_Value",
+    "guidelines": "Your_Guidelines_Value",
+    "tone": "Your_Tone_Value"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"video_title": "Unraveling the Mystery: Understanding the Different Types of Fats and Making Informed Dietary Choices"
+}
+```
+
+</ResponseExample>
