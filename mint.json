@@ -116,7 +116,8 @@
           "group": "Video Posts",
           "icon": "video",
           "pages": [
-            "sm-posts/endpoint/sample-video"
+            "sm-posts/endpoint/sample-video",
+            "sm-posts/endpoint/video-title"
           ]
         }
       ]
