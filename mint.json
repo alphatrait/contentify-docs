@@ -119,6 +119,13 @@
             "sm-posts/endpoint/sample-video",
             "sm-posts/endpoint/video-title"
           ]
+        },
+        {
+          "group": "Audio Posts",
+          "icon": "Audio",
+          "pages": [
+            "sm-posts/endpoint/get-all-voices"
+          ]
         }
       ]
     },

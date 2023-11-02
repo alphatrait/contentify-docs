@@ -1,0 +1,95 @@
+
+### Body
+
+Get all the available voices and their details.
+
+### Response
+
+<ResponseField name="voices" type="string">
+  All the available voices, their names, and their details.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X GET \
+  <BASE_URL>/get-all-voices \
+  -H 'X-API-Key: YOUR_API_KEY'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/get-all-voices';
+$api_key = 'YOUR_API_KEY';
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    "X-API-Key: $api_key"
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/get-all-voices'
+headers = {
+    'X-API-Key': 'YOUR_API_KEY'
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/get-all-voices';
+const headers = {
+    'X-API-Key': 'YOUR_API_KEY'
+};
+
+fetch(url, {
+    method: 'GET',
+    headers: headers
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "voices": {
+    "voices": [
+      {
+        "labels": {
+          "accent": "american",
+          "age": "young",
+          "description": "calm",
+          "gender": "female",
+          "use case": "narration"
+        },
+        "name": "Rachel",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/21m00Tcm4TlvDq8ikWAM/df6788f9-5c96-470d-8312-aab3b3d8f50a.mp3",
+        "voice_id": "21m00Tcm4TlvDq8ikWAM"
+      }
+    ]
+  }
+}
+```
+
+</ResponseExample>
