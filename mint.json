@@ -126,6 +126,13 @@
           "pages": [
             "sm-posts/endpoint/get-all-voices"
           ]
+        },
+        {
+          "group": "Boosters",
+          "icon": "rocket",
+          "pages": [
+            "sm-posts/endpoint/hashtags"
+          ]
         }
       ]
     },

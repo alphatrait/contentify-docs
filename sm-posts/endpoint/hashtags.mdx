@@ -1,0 +1,133 @@
+
+### Body
+
+This endpoint will generate hashtags for your social media posts.
+
+<ParamField body="post" type="string">
+  This is the post content for which you want to generate hashtags. Example: This is a sample post.
+</ParamField>
+
+<ParamField body="min" type="string">
+  Optional: Minimum number of hashtags to generate in string. Example: 5
+</ParamField>
+
+<ParamField body="max" type="string">
+  Optional: Maximum number of hashtags to generate in string. Example: 10
+</ParamField>
+
+<ParamField body="location" type="string">
+  Optional: Location of the post. Example: New York
+</ParamField>
+
+<ParamField body="guildlines" type="string">
+  Optional: Guildlines for the post. Example: No political hashtags
+</ParamField>
+
+### Response
+
+<ResponseField name="hashtag" type="string">
+  The list of the hashtags generated for the post.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/hashtag \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "post": "Your post text",
+    "min": 2,
+    "max": 5,
+    "location": "Some location",
+    "guidelines": "Some guidelines"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/hashtag';
+$data = array(
+    "post" => "Your post text",
+    "min" => 2,
+    "max" => 5,
+    "location" => "Some location",
+    "guidelines" => "Some guidelines"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/hashtag'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "post": "Your post text",
+    "min": 2,
+    "max": 5,
+    "location": "Some location",
+    "guidelines": "Some guidelines"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/hashtag';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "post": "Your post text",
+    "min": 2,
+    "max": 5,
+    "location": "Some location",
+    "guidelines": "Some guidelines"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"hashtag": "#hashtag1 #hashtag2 #hashtag3"
+}
+```
+
+</ResponseExample>
