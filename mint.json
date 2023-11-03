@@ -138,7 +138,7 @@
     },
     {
       "group": "Get Started",
-      "pages": [
+      "pages": [ 
         "integrations/authentication"
       ]
     },
