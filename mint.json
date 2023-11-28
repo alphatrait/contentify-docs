@@ -131,6 +131,7 @@
           "group": "Audio Posts",
           "icon": "music",
           "pages": [
+            "sm-posts/endpoint/get-all-voices"
           ]
         },
         {
