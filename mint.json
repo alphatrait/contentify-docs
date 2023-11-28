@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Contentify AI",
   "logo": {
     "dark": "/logo/dark.svg",
