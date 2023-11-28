@@ -1,0 +1,137 @@
+
+### Body
+ 
+This endpoint will generate detail description of an image.
+
+<ParamField body="image_url" type="string">
+  This is the image url of the image you want to generate description for.
+</ParamField>
+
+### Response
+
+<ResponseField name="description" type="string">
+  A dictionary of image description details. 
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/image-description \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "image_url": "https://example-image-url.com"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/image-description';
+$data = array(
+    'image_url' => 'https://example-image-url.com'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/image-description'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'image_url': 'https://example-image-url.com'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/image-description';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    image_url: 'https://example-image-url.com'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"description": {
+		"image_description": [
+			{
+				"colors_and_tone": {
+					"colors_and_tone": "Vivid colors with a predominance of whites from the rice and container, and greens, oranges, and browns from the vegetables and beef"
+				},
+				"composition_and_perspective": {
+					"composition_and_perspective": "Top-down view of the meal in the container, occupying the majority of the frame"
+				},
+				"context_or_background": {
+					"context_or_background": "Could be a depiction of a meal prepared for takeaway, catering, or meal-prep purposes"
+				},
+				"emotional_impact": {
+					"emotional_impact": "Appetizing and orderly, inviting one to enjoy a well-balanced meal"
+				},
+				"lighting": {
+					"lighting": "Seems to be lit by a diffuse light source, minimizing harsh shadows"
+				},
+				"main_elements": {
+					"elements": [
+						"rice",
+						"beef",
+						"broccoli",
+						"carrots",
+						"mushroom",
+						"meal container"
+					]
+				},
+				"quality_and_style": {
+					"quality_and_style": "Realistic with detailed texture, conveying the appearance of the food effectively"
+				},
+				"subject_matter": "The image is a still life of a prepared meal in a container.",
+				"text_or_overlays": {
+					"text_or_overlays": "No text or overlays present"
+				},
+				"unique_features": {
+					"unique_features": "The meal is neatly partitioned within the container, separating each component"
+				}
+			}
+		]
+	}
+}
+```
+
+</ResponseExample>
