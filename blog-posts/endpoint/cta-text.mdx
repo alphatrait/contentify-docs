@@ -34,7 +34,7 @@ curl -X POST \
      -H "X-API-Key: YOUR_API_KEY_HERE" \
      -H "Content-Type: application/json" \
      -d '{"url": "http://example.com"}' \
-     http://your-api-domain.com/cta-text
+     <BASE_URL>/cta-text
 
 ```
 
@@ -70,7 +70,7 @@ data = {
     'url': 'http://example.com'
 }
 
-response = requests.post('http://your-api-domain.com/cta-text', headers=headers, json=data)
+response = requests.post('<BASE_URL>/cta-text', headers=headers, json=data)
 
 if response.status_code == 201:
     cta_text = response.json()['cta_text']
@@ -82,7 +82,7 @@ else:
 ```
 
 ```bash JavaScript
-const url = 'http://your-api-domain.com/cta-text';
+const url = '<BASE_URL>/cta-text';
 const data = {
     url: 'http://example.com'
 };
