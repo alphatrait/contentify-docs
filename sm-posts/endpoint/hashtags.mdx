@@ -31,30 +31,21 @@ This endpoint will generate hashtags for your social media posts.
 
 <RequestExample>
 
-```bash cURL
+```bash
 curl -X POST \
-  <BASE_URL>/hashtag \
+  <BASE_URL>/arxiv \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "post": "Your post text",
-    "min": 2,
-    "max": 5,
-    "location": "Some location",
-    "guidelines": "Some guidelines"
+    "topic": "quantum physics"
 }'
 
 ```
 
-```bash PHP
-<?php
-$url = '<BASE_URL>/hashtag';
+```bash
+$url = '<BASE_URL>/arxiv';
 $data = array(
-    "post" => "Your post text",
-    "min" => 2,
-    "max" => 5,
-    "location" => "Some location",
-    "guidelines" => "Some guidelines"
+    'topic' => 'quantum physics'
 );
 
 $ch = curl_init($url);
@@ -69,44 +60,32 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-echo $response;
-?>
-
 ```
 
-```bash Python
+``` bash
 import requests
 
-url = '<BASE_URL>/hashtag'
+url = '<BASE_URL>/arxiv'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    "post": "Your post text",
-    "min": 2,
-    "max": 5,
-    "location": "Some location",
-    "guidelines": "Some guidelines"
+    'topic': 'quantum physics'
 }
 
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
-
 ```
 
-```bash JavaScript
-const url = '<BASE_URL>/hashtag';
+```bash 
+const url = '<BASE_URL>/arxiv';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    "post": "Your post text",
-    "min": 2,
-    "max": 5,
-    "location": "Some location",
-    "guidelines": "Some guidelines"
+    topic: 'quantum physics'
 };
 
 fetch(url, {
@@ -118,6 +97,7 @@ fetch(url, {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 
+
 ```
 
 </RequestExample>
@@ -126,7 +106,24 @@ fetch(url, {
 
 ```json Response
 {
-	"hashtag": "#hashtag1 #hashtag2 #hashtag3"
+	"arxiv": "    {
+        'title': 'CAD: Photorealistic 3D Generation via Adversarial Distillation',
+        'source': 'http://arxiv.org/pdf/2312.06663v1',
+        'updated_date': datetime(2023, 12, 11, 18, 59, 58, tzinfo=timezone.utc),
+        'author': [
+            'Ziyu Wan', 'Despoina Paschalidou', 'Ian Huang', 'Hongyu Liu',
+            'Bokui Shen', 'Xiaoyu Xiang', 'Jing Liao', 'Leonidas Guibas'
+        ]
+    },
+    {
+        'title': 'Photorealistic Video Generation with Diffusion Models',
+        'source': 'http://arxiv.org/pdf/2312.06662v1',
+        'updated_date': datetime(2023, 12, 11, 18, 59, 57, tzinfo=timezone.utc),
+        'author': [
+            'Agrim Gupta', 'Lijun Yu', 'Kihyuk Sohn', 'Xiuye Gu',
+            'Meera Hahn', 'Li Fei-Fei', 'Irfan Essa', 'Lu Jiang', 'José Lezama'
+        ]
+    }"
 }
 ```
 

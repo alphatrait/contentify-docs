@@ -98,6 +98,14 @@
       "group": "Endpoints",
       "pages": [
         {
+          "group": "Sources",
+          "icon": "play",
+          "pages": [
+            "sm-posts/endpoint/arxiv",
+            "sm-posts/endpoint/ieee"
+          ]
+        },
+        {
           "group": "Essentials",
           "icon": "grid",
           "pages": [

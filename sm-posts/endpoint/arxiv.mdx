@@ -1,0 +1,130 @@
+
+
+### Body
+
+Get a list of research paper from Arxiv.
+
+<ParamField body="topic" type="string">
+  What topic you want to search for. Example: "machine learning"
+</ParamField>
+
+### Response
+
+<ResponseField name="arxiv" type="string">
+  The post URL.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <<BASE_URL>>/top-gradient-image \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<<BASE_URL>>/top-gradient-image';
+$data = array(
+    "size" => "4:5",
+    "color" => "#ff0000",
+    "font" => "Arial, sans-serif",
+    "brand_name" => "Laredo ER",
+    "guidelines" => "No political content",
+    "theme" => "light blue",
+    "image" => "generated",
+    "source" => "hello word"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<<BASE_URL>>/top-gradient-image'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<<BASE_URL>>/top-gradient-image';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "size": "4:5",
+    "color": "#ff0000",
+    "font": "Arial, sans-serif",
+    "brand_name": "Laredo ER",
+    "guidelines": "No political content",
+    "theme": "light blue",
+    "image": "generated",
+    "source": "hello word"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "top_gradient_image_post": "https://ai.contentify.app/some-image.jpg",
+}
+```
+
+</ResponseExample>
