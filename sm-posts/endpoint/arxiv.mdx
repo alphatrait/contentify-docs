@@ -16,7 +16,7 @@ Get a list of research paper from Arxiv.
 
 <RequestExample>
 
-```bash
+```bash cURL
 curl -X POST \
   <BASE_URL>/arxiv \
   -H 'Content-Type: application/json' \
@@ -27,7 +27,8 @@ curl -X POST \
 
 ```
 
-```bash
+```bash PHP
+<?php
 $url = '<BASE_URL>/arxiv';
 $data = array(
     'topic' => 'quantum physics'
@@ -45,9 +46,12 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
+echo $response;
+?>
+
 ```
 
-``` bash
+```bash Python
 import requests
 
 url = '<BASE_URL>/arxiv'
@@ -63,7 +67,7 @@ response = requests.post(url, headers=headers, json=data)
 print(response.json())
 ```
 
-```bash 
+```bash JavaScript
 const url = '<BASE_URL>/arxiv';
 const headers = {
     'Content-Type': 'application/json',
