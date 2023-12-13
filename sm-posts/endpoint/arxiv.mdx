@@ -10,42 +10,27 @@ Get a list of research paper from Arxiv.
 
 ### Response
 
-<ResponseField name="arxiv" type="string">
-  The post URL.
+<ResponseField name="hashtag" type="string">
+  The list of the hashtags generated for the post.
 </ResponseField>
 
 <RequestExample>
 
-```bash cURL
+```bash
 curl -X POST \
-  <<BASE_URL>>/top-gradient-image \
+  <BASE_URL>/arxiv \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "size": "4:5",
-    "color": "#ff0000",
-    "font": "Arial, sans-serif",
-    "brand_name": "Laredo ER",
-    "guidelines": "No political content",
-    "theme": "light blue",
-    "image": "generated",
-    "source": "hello word"
+    "topic": "quantum physics"
 }'
 
 ```
 
-```bash PHP
-<?php
-$url = '<<BASE_URL>>/top-gradient-image';
+```bash
+$url = '<BASE_URL>/arxiv';
 $data = array(
-    "size" => "4:5",
-    "color" => "#ff0000",
-    "font" => "Arial, sans-serif",
-    "brand_name" => "Laredo ER",
-    "guidelines" => "No political content",
-    "theme" => "light blue",
-    "image" => "generated",
-    "source" => "hello word"
+    'topic' => 'quantum physics'
 );
 
 $ch = curl_init($url);
@@ -60,50 +45,32 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-echo $response;
-?>
-
 ```
 
-```bash Python
+``` bash
 import requests
 
-url = '<<BASE_URL>>/top-gradient-image'
+url = '<BASE_URL>/arxiv'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    "size": "4:5",
-    "color": "#ff0000",
-    "font": "Arial, sans-serif",
-    "brand_name": "Laredo ER",
-    "guidelines": "No political content",
-    "theme": "light blue",
-    "image": "generated",
-    "source": "hello word"
+    'topic': 'quantum physics'
 }
 
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
-
 ```
 
-```bash JavaScript
-const url = '<<BASE_URL>>/top-gradient-image';
+```bash 
+const url = '<BASE_URL>/arxiv';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    "size": "4:5",
-    "color": "#ff0000",
-    "font": "Arial, sans-serif",
-    "brand_name": "Laredo ER",
-    "guidelines": "No political content",
-    "theme": "light blue",
-    "image": "generated",
-    "source": "hello word"
+    topic: 'quantum physics'
 };
 
 fetch(url, {
@@ -115,6 +82,7 @@ fetch(url, {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 
+
 ```
 
 </RequestExample>
@@ -123,8 +91,26 @@ fetch(url, {
 
 ```json Response
 {
-  "top_gradient_image_post": "https://ai.contentify.app/some-image.jpg",
+	"arxiv": "    {
+        'title': 'CAD: Photorealistic 3D Generation via Adversarial Distillation',
+        'source': 'http://arxiv.org/pdf/2312.06663v1',
+        'updated_date': datetime(2023, 12, 11, 18, 59, 58, tzinfo=timezone.utc),
+        'author': [
+            'Ziyu Wan', 'Despoina Paschalidou', 'Ian Huang', 'Hongyu Liu',
+            'Bokui Shen', 'Xiaoyu Xiang', 'Jing Liao', 'Leonidas Guibas'
+        ]
+    },
+    {
+        'title': 'Photorealistic Video Generation with Diffusion Models',
+        'source': 'http://arxiv.org/pdf/2312.06662v1',
+        'updated_date': datetime(2023, 12, 11, 18, 59, 57, tzinfo=timezone.utc),
+        'author': [
+            'Agrim Gupta', 'Lijun Yu', 'Kihyuk Sohn', 'Xiuye Gu',
+            'Meera Hahn', 'Li Fei-Fei', 'Irfan Essa', 'Lu Jiang', 'José Lezama'
+        ]
+    }"
 }
 ```
 
 </ResponseExample>
+
