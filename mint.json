@@ -146,13 +146,14 @@
           "group": "Boosters",
           "icon": "rocket",
           "pages": [
-            "sm-posts/endpoint/hashtags"
+            "sm-posts/endpoint/hashtags",
+            "sm-posts/endpoint/get-ideas"
           ]
         }
       ]
     },
     {
-      "group": "Get Started",
+      "group": "Get StartedDraft the posts (Do NOT Automatic Publish My Posts)",
       "pages": [ 
         "integrations/authentication"
       ]
