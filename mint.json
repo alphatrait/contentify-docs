@@ -102,6 +102,7 @@
           "icon": "play",
           "pages": [
             "sm-posts/endpoint/arxiv",
+            "sm-posts/endpoint/topic",
             "sm-posts/endpoint/ieee"
           ]
         },
@@ -146,8 +147,7 @@
           "group": "Boosters",
           "icon": "rocket",
           "pages": [
-            "sm-posts/endpoint/hashtags",
-            "sm-posts/endpoint/get-ideas"
+            "sm-posts/endpoint/hashtags"
           ]
         }
       ]
