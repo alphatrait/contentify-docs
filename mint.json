@@ -79,7 +79,8 @@
             "blog-posts/endpoint/related-blogs-section", 
             "blog-posts/endpoint/list-of-blogs"
           ]
-        }
+        },
+        "blog-posts/endpoint/page-optimizer"
       ]
     },
     {

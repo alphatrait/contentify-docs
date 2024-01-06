@@ -1,0 +1,112 @@
+---
+title: "SEO Optimizer"
+description: "This endpoint will generate keyword, title, and description for your specified url."
+---
+
+### Body
+
+This endpoint will generate keyword, title, and description for your specified url.
+
+<ParamField body="url" type="string">
+    This is the url of your website you want to optimize.
+</ParamField>
+
+### Response
+
+<ResponseField name="keyword" type="string">
+    This is the keyword generated for your page.
+</ResponseField>
+
+<ResponseField name="title" type="string">
+    This is the generated title for your page.
+</ResponseField>
+
+<ResponseField name="description" type="string">
+    This is the generated description for your page.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/seo-optimize \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "url": "https://example-website-url.com"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/seo-optimize';
+$data = array(
+    'url' => 'https://example-website-url.com'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/seo-optimize'
+data = {
+    'url': 'https://example-website-url.com'
+}
+
+response = requests.post(url, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/seo-optimize';
+const data = {
+    url: 'https://example-website-url.com'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+	"optimization": {
+        "keywords": "Low Carb Plan",
+        "title": "#1 Ketogenic Meal Plan - Low Carb Plan - Houston Meal Prep",
+		"description": "Get the #1 Ketogenic Meal Plan with Low Carb Plan from Houston Meal Prep. The Low Carb Plan offers a variety of healthy meals with average macros, local and organic ingredients, and professional planning, prepping, cooking, and delivery. Subscribe now for free delivery in Houston!"	}
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
