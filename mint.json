@@ -64,6 +64,15 @@
       "group": "Endpoints",
       "pages": [
         {
+          "group": "Blog Main Parts",
+          "icon": "newspaper",
+          "pages": [
+            "blog-posts/endpoint/topic", 
+            "blog-posts/endpoint/section",
+            "blog-posts/endpoint/body"
+          ]
+        },
+        {
           "group": "CTA",
           "icon": "bullseye-pointer",
           "pages": [
@@ -78,15 +87,6 @@
           "pages": [
             "blog-posts/endpoint/related-blogs-section", 
             "blog-posts/endpoint/list-of-blogs"
-          ]
-        },
-        {
-          "group": "Blog Main Parts",
-          "icon": "newspaper",
-          "pages": [
-            "blog-posts/endpoint/topic", 
-            "blog-posts/endpoint/section",
-            "blog-posts/endpoint/body"
           ]
         },
         "blog-posts/endpoint/page-optimizer"
