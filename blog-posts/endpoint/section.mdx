@@ -1,0 +1,121 @@
+---
+title: "Blog Sections Generator"
+description: "This endpoint will generate a list of sections for a blog post."
+icon: 'ranking-star'
+---
+
+### Body
+
+This endpoint will generate sections of a blog post.
+
+<ParamField body="section" type="string">
+    The blog topic. I don't know why it's not called topic.
+</ParamField>
+
+### Response
+
+<ResponseField name="section" type="array">
+    These are the sections of the blog post.
+</ResponseField>  
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/sections \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "section": "Value"
+}'
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/sections';
+$data = array(
+    "section" => "Value1"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/sections'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "section": "Value"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/sections';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "section": "Value"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+    
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+	"section": [
+		"Introduction",
+		"Section 1",
+		"Section 2",
+        "Section 3",
+        "Section 4",
+		"Conclusion"
+	]
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

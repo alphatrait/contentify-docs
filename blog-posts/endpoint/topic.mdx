@@ -1,0 +1,129 @@
+
+### Body
+ 
+This endpoint will generate a list of ideas for a topic.
+
+<ParamField body="topic" type="string">
+  This is the topic for which you want to generate ideas.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="post_ideas" type="string">
+  A json object containing the ideas for the topic.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/post-ideas \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "topic": "sustainable living"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/post-ideas';
+$data = array(
+    'topic' => 'sustainable living'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/post-ideas'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'topic': 'sustainable living'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/post-ideas';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    topic: 'sustainable living'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "post_ideas": {
+        "Digital marketing": {
+            "quicktips": [
+                "Create a strong content marketing strategy",
+                "Utilize social media platforms effectively"
+            ],
+            "industry_myths": [
+                "SEO is all you need for digital marketing success",
+                "Email marketing is outdated"
+            ],
+            "common_mistakes": [
+                "Ignoring data analytics",
+                "Not optimizing for mobile"
+            ],
+            "common_questions": [
+                "What is digital marketing?",
+                "How does digital marketing differ from traditional marketing?",
+                "What are the key components of a successful digital marketing strategy?"
+            ],
+            "actionable_systems": [
+                "Developing a content calendar",
+                "Optimizing social media profiles"
+            ]
+        }
+    }
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

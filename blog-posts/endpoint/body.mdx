@@ -1,0 +1,172 @@
+---
+title: "Blog Body Generator"
+description: "This endpoint will generate a paragraph of a blog post for your specified keyword."
+icon: 'ranking-star'
+---
+
+### Body
+
+This endpoint will generate a paragraph of a blog post for your specified keyword.
+
+<ParamField body="title" type="string">
+    This is your blog title.
+</ParamField>
+
+<ParamField body="keyword" type="string">
+    This is your focus keyword.
+</ParamField>
+
+<ParamField body="sections" type="array">
+    These are the blog sections.
+</ParamField>
+
+<ParamField body="focus_section" type="string">
+    This is the section that you want to focus on.
+</ParamField>
+
+<ParamField body="previous_sections" type="object">
+    These are the previous sections of your blog.
+</ParamField>
+
+### Response
+
+<ResponseField name="body" type="string">
+    This is the generated paragraph.
+</ResponseField>  
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/v2/body \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "title": "The Future of Technology",
+    "keyword": "Innovation",
+    "sections": {
+        "Introduction": "This is the introduction section",
+        "AI Advancements": "This is the AI advancements section",
+        "Impact on Society": "This is the impact on society section"
+    },
+    "focus_section": "Impact on Society",
+    "previous_sections": {
+        "Introduction": "This is the introduction section",
+        "AI Advancements": "This is the AI advancements section"
+    }
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/v2/body';
+$data = array(
+    'title' => 'The Future of Technology',
+    'keyword' => 'Innovation',
+    'sections' => array(
+        'Introduction' => 'This is the introduction section',
+        'AI Advancements' => 'This is the AI advancements section',
+        'Impact on Society' => 'This is the impact on society section'
+    ),
+    'focus_section' => 'Impact on Society',
+    'previous_sections' => array(
+        'Introduction' => 'This is the introduction section',
+        'AI Advancements' => 'This is the AI advancements section'
+    )
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/v2/body'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'title': 'The Future of Technology',
+    'keyword': 'Innovation',
+    'sections': {
+        'Introduction': 'This is the introduction section',
+        'AI Advancements': 'This is the AI advancements section',
+        'Impact on Society': 'This is the impact on society section'
+    },
+    'focus_section': 'Impact on Society',
+    'previous_sections': {
+        'Introduction': 'This is the introduction section',
+        'AI Advancements': 'This is the AI advancements section'
+    }
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/v2/body';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    title: 'The Future of Technology',
+    keyword: 'Innovation',
+    sections: {
+        Introduction: 'This is the introduction section',
+        'AI Advancements': 'This is the AI advancements section',
+        'Impact on Society': 'This is the impact on society section'
+    },
+    focus_section: 'Impact on Society',
+    previous_sections: {
+        Introduction: 'This is the introduction section',
+        'AI Advancements': 'This is the AI advancements section'
+    }
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+    
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+	"body": [
+        "The generated body."
+    ]
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
