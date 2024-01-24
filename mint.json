@@ -121,7 +121,9 @@
           "icon": "grid",
           "pages": [
             "sm-posts/endpoint/get-all-voices",
-            "sm-posts/endpoint/get-image-description"
+            "sm-posts/endpoint/get-image-description",
+            "sms-posts/endpoint/caption",
+            "sm-posts/endpoint/tweet"
           ]
         },
         {
