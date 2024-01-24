@@ -2,15 +2,15 @@
 
 ### Body
 
-This endpoint will generate social media captions.
+This endpoint will generate social media tweets.
 
 <ParamField body="text" type="string">
-    This is the text you want to generate social media captions for.
+    This is the text you want to generate social media tweets for.
 </ParamField>
 
 
 <ParamField body="tone" type="string">
-    How should the social media caption sound like? (e.g. funny, serious, etc.)
+    How should the social media tweet sound like? (e.g. funny, serious, etc.)
 </ParamField>
 
 <ParamField body="guildelines" type="string">
@@ -19,15 +19,15 @@ This endpoint will generate social media captions.
 
 ### Response
 
-<ResponseField name="caption" type="string">
-    This is the generated social media caption.
+<ResponseField name="tweet" type="string">
+    This is the generated social media tweet.
 </ResponseField>
 
 <RequestExample>
 
 ```bash cURL
 curl -X POST \
-  <BASE_URL>/caption \
+  <BASE_URL>/tweet \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -40,7 +40,7 @@ curl -X POST \
 
 ```bash PHP
 <?php
-$url = '<BASE_URL>/caption';
+$url = '<BASE_URL>/tweet';
 $data = array(
     "text" => "Your text here",
     "tone" => "Friendly",
@@ -67,7 +67,7 @@ echo $response;
 ```bash Python
 import requests
 
-url = '<BASE_URL>/caption'
+url = '<BASE_URL>/tweet'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -84,7 +84,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = '<BASE_URL>/caption';
+const url = '<BASE_URL>/tweet';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -112,7 +112,7 @@ fetch(url, {
 
 ```json Response
 {
-    "caption": "Your generated caption"
+    "tweet": "Your generated tweet"
 }
 ```
 
