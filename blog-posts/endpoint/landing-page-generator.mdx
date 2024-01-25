@@ -1,0 +1,144 @@
+---
+title: "Landing Page Generator"
+description: "This endpoint will generate landing pages."
+icon: 'layer-group'
+---
+
+### Body
+
+This endpoint will generate landing pages elements from a given title.
+
+<ParamField body="title" type="string">
+    This is the title of your landing page. The landing page will mainly be generated from this title.
+</ParamField>
+
+<ParamField body="city" type="string">
+    Localize your landing page by adding a city like this to the title: "My Title in (Paris)".
+</ParamField>
+
+<ParamField body="about" type="string">
+    This is about your business to generate a sales pitch paragraph.
+</ParamField>
+
+### Response
+
+<ResponseField name="description" type="string">
+    This is the generated paragraph for the landing page.
+</ResponseField>
+
+<ResponseField name="image" type="string">
+    This is the generated image for the landing page.
+</ResponseField>
+
+<ResponseField name="pitch" type="string">
+    This is the generated sales pitch for the landing page.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/landing-page \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "title": "Your title",
+    "city": "Your city",
+    "about": "About your landing page"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/landing-page';
+$data = array(
+    "title" => "Your title",
+    "city" => "Your city",
+    "about" => "About your landing page"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/landing-page'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "title": "Your title",
+    "city": "Your city",
+    "about": "About your landing page"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/landing-page';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "title": "Your title",
+    "city": "Your city",
+    "about": "About your landing page"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+	"landing_page": {
+		"description": "<p>This is the landing page paragraph</p>",
+		"image": "Image URL",
+		"pitch": "<p>This is the sales pitch paragraph</p>"	
+}
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

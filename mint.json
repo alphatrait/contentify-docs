@@ -89,7 +89,8 @@
             "blog-posts/endpoint/list-of-blogs"
           ]
         },
-        "blog-posts/endpoint/page-optimizer"
+        "blog-posts/endpoint/page-optimizer",
+        "blog-posts/endpoint/landing-page-generator"
       ]
     },
     {
