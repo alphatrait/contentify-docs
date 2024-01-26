@@ -89,8 +89,15 @@
             "blog-posts/endpoint/list-of-blogs"
           ]
         },
-        "blog-posts/endpoint/page-optimizer",
-        "blog-posts/endpoint/landing-page-generator"
+        {
+          "group": "Landing Pages",
+          "icon": "layer-group",
+          "pages": [
+            "blog-posts/endpoint/landing-page-generator", 
+            "blog-posts/endpoint/niches-and-titles"
+          ]
+        },
+        "blog-posts/endpoint/page-optimizer"
       ]
     },
     {

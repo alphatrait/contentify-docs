@@ -1,0 +1,167 @@
+---
+title: "Niches and Titles"
+description: "This endpoint will return a list of Industries, niches, categories and titles."
+---
+
+### Body
+
+This endpoint will return a list of Industries, niches, categories and titles.
+
+## Industries
+
+<AccordionGroup>
+  <Accordion title="Car Services">
+    ### Niches
+        1. Auto Glass
+        2. Car Tint
+        3. Car Body
+  </Accordion>
+
+  <Accordion title="Beauty">
+    ### Niches
+        Coming soon
+  </Accordion>
+
+</AccordionGroup>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://us-east-2.aws.data.mongodb-api.com/app/data-lucjy/endpoint/data/v1/action/find' \
+-H 'Content-Type: application/json' \
+-H 'api-key: YOUR_API_KEY' \
+-H 'Accept: application/ejson' \
+-d '{
+    "collection": "landing_pages",
+    "database": "SEO",
+    "dataSource": "Cluster0",
+    "filter": {}
+}'
+
+```
+
+```bash PHP
+$url = "https://us-east-2.aws.data.mongodb-api.com/app/data-lucjy/endpoint/data/v1/action/find";
+$payload = json_encode(array(
+    "collection" => "landing_pages",
+    "database" => "SEO",
+    "dataSource" => "Cluster0",
+    "filter" => new stdClass()
+));
+
+$headers = array(
+    'Content-Type: application/json',
+    'api-key: YOUR_API_KEY',
+    'Accept: application/ejson'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$response = curl_exec($ch);
+curl_close($ch);
+echo $response;
+
+```
+
+```bash Python
+import requests
+import json
+
+url = "https://us-east-2.aws.data.mongodb-api.com/app/data-lucjy/endpoint/data/v1/action/find"
+
+payload = json.dumps({
+    "collection": "landing_pages",
+    "database": "SEO",
+    "dataSource": "Cluster0",
+    "filter": {}
+})
+
+headers = {
+    'Content-Type': 'application/json',
+    'api-key': 'YOUR_API_KEY',
+    'Accept': 'application/ejson'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+
+```
+
+```bash JavaScript
+const url = "https://us-east-2.aws.data.mongodb-api.com/app/data-lucjy/endpoint/data/v1/action/find";
+const payload = JSON.stringify({
+    collection: "landing_pages",
+    database: "SEO",
+    dataSource: "Cluster0",
+    filter: {}
+});
+
+const headers = {
+    'Content-Type': 'application/json',
+    'api-key': 'YOUR_API_KEY',
+    'Accept': 'application/ejson'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: payload
+})
+.then(response => response.text())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+    
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+  "documents": [
+    {
+      "_id": { "$oid": "12" },
+      "Industry": "Car Services",
+      "Niches": {
+        "Auto Glass": {
+          "Categories": {
+            "Auto Glass Services": [
+              "(city) Auto Glass Repair",
+              "Windshield Replacement in (city)"
+            ],
+            "Auto Glass by Vehicle Make": [
+              "Ford Auto Glass in (city)",
+              "Chevrolet Auto Glass in (city)"
+            ]
+          }
+        },
+        "Car Tint": {
+          "Categories": {
+            "Car Window Tinting Services": [
+              "(city) Car Window Tinting",
+              "Professional Auto Tinting Services in (city)"
+            ],
+            "Car Window Tinting by Vehicle Make": [
+              "Ford Car Tinting in (city)",
+              "Chevrolet Car Tinting in (city)"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
+
+```
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
