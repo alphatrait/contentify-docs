@@ -31,7 +31,7 @@ This endpoint will generate social media captions from an image description.
 
 ```bash cURL
 curl -X POST \
-  <BASE_URL>/caption-my-image \
+  <BASE_URL>/caption-my-asset \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -45,7 +45,7 @@ curl -X POST \
 
 ```bash PHP
 <?php
-$url = '<BASE_URL>/caption-my-image';
+$url = '<BASE_URL>/caption-my-asset';
 $data = array(
     "image_description" => "Your image description here",
     "tone" => "Friendly",
@@ -73,7 +73,7 @@ echo $response;
 ```bash Python
 import requests
 
-url = '<BASE_URL>/caption-my-image'
+url = '<BASE_URL>/caption-my-asset'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -91,7 +91,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = '<BASE_URL>/caption-my-image';
+const url = '<BASE_URL>/caption-my-asset';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
