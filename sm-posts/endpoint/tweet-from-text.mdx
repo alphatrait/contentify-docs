@@ -13,6 +13,10 @@ This endpoint will generate social media tweets.
     How should the social media tweet sound like? (e.g. funny, serious, etc.)
 </ParamField>
 
+<ParamField body="brand_description" type="string">
+    This is the description of your brand.
+</ParamField>
+
 <ParamField body="guildelines" type="string">
     Any guidelines you want our model to follow? (e.g. no profanity, etc.)
 </ParamField>
@@ -33,6 +37,7 @@ curl -X POST \
   -d '{
     "text": "Your text here",
     "tone": "Friendly",
+    "brand_description": "Your brand description",
     "guidelines": "Some guidelines"
 }'
 
@@ -44,6 +49,7 @@ $url = '<BASE_URL>/tweet';
 $data = array(
     "text" => "Your text here",
     "tone" => "Friendly",
+    "brand_description" => "Your brand description",
     "guidelines" => "Some guidelines"
 );
 
@@ -75,6 +81,7 @@ headers = {
 data = {
     "text": "Your text here",
     "tone": "Friendly",
+    "brand_description": "Your brand description",
     "guidelines": "Some guidelines"
 }
 
@@ -92,6 +99,7 @@ const headers = {
 const data = {
     "text": "Your text here",
     "tone": "Friendly",
+    "brand_description": "Your brand description",
     "guidelines": "Some guidelines"
 };
 

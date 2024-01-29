@@ -130,8 +130,10 @@
           "pages": [
             "sm-posts/endpoint/get-all-voices",
             "sm-posts/endpoint/get-image-description",
-            "sm-posts/endpoint/caption",
-            "sm-posts/endpoint/tweet"
+            "sm-posts/endpoint/caption-from-text",
+            "sm-posts/endpoint/caption-from-image",
+            "sm-posts/endpoint/tweet-from-text",
+            "sm-posts/endpoint/tweet-from-image"
           ]
         },
         {

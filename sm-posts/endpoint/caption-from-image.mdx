@@ -1,0 +1,134 @@
+
+
+### Body
+
+This endpoint will generate social media captions from an image description.
+
+<ParamField body="image_description" type="string">
+    This is the image description you want to generate social media captions for.
+</ParamField>
+
+
+<ParamField body="tone" type="string">
+    How should the social media caption sound like? (e.g. funny, serious, etc.)
+</ParamField>
+
+<ParamField body="brand_description" type="string">
+    This is the description of your brand.
+</ParamField>
+
+<ParamField body="guildelines" type="string">
+    Any guidelines you want our model to follow? (e.g. no profanity, etc.)
+</ParamField>
+
+### Response
+
+<ResponseField name="caption" type="string">
+    This is the generated social media caption.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/caption-my-image \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "image_description": "Your image description here",
+    "tone": "Friendly",
+    "brand_description": "Your brand description",
+    "guidelines": "Some guidelines"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/caption-my-image';
+$data = array(
+    "image_description" => "Your image description here",
+    "tone" => "Friendly",
+    "brand_description" => "Your brand description",
+    "guidelines" => "Some guidelines"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/caption-my-image'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "image_description": "Your image description here",
+    "tone": "Friendly",
+    "brand_description": "Your brand description",
+    "guidelines": "Some guidelines"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/caption-my-image';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "image_description": "Your image description here",
+    "tone": "Friendly",
+    "brand_description": "Your brand description",
+    "guidelines": "Some guidelines"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "caption": "Your generated caption"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
