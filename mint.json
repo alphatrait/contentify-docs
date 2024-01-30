@@ -175,7 +175,7 @@
       ]
     },
     {
-      "group": "Get StartedDraft the posts (Do NOT Automatic Publish My Posts)",
+      "group": "Get Started",
       "pages": [ 
         "integrations/authentication"
       ]
