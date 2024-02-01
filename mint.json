@@ -95,7 +95,7 @@
           "pages": [
             "blog-posts/endpoint/niches-and-titles",
             "blog-posts/endpoint/landing-page-generator", 
-            "blog-posts/endpoint/get-responses"
+            "blog-posts/endpoint/get-response"
           ]
         },
         "blog-posts/endpoint/page-optimizer"
