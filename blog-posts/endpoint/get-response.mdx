@@ -1,0 +1,101 @@
+
+### Body
+
+This will takes a job ID and returns the response of the job.
+
+### Response
+
+<ResponseField name="id" type="string">
+  This is the job ID.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X GET \
+  <BASE_URL>/get-response/RESPONSE_ID
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/get-response/RESPONSE_ID';
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+if ($status_code == 200) {
+    $response_data = json_decode($response, true);
+    print_r($response_data);
+} else {
+    echo "Error: $status_code";
+}
+
+curl_close($ch);
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/get-response/RESPONSE_ID'
+
+response = requests.get(url)
+if response.status_code == 200:
+    response_data = response.json()
+    print(response_data)
+else:
+    print(f"Error: {response.status_code}")
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/get-response/RESPONSE_ID';
+
+fetch(url)
+  .then((response) => {
+    if (response.status === 200) {
+      return response.json();
+    } else {
+      console.error(`Error: ${response.status}`);
+    }
+  })
+  .then((data) => {
+    if (data) {
+      console.log(data);
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"_id": "123456",
+	"landing_page": {
+		"description": "sample description",
+    "image": "https://www.sample.com/sample.jpg",
+    "pitch": "sample pitch"
+  }
+}
+```
+
+</ResponseExample>
+
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

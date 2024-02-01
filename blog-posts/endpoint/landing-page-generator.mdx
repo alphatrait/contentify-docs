@@ -24,6 +24,10 @@ description: "This endpoint will generate landing pages elements from a given ti
     This is about your business to generate a sales pitch paragraph.
 </ParamField>
 
+<ParamField body="user_webhook_url" type="string">
+    This is where you want to recieve the notification when the landing page is generated.
+</ParamField>
+
 ### Response
 
 <ResponseField name="description" type="string">
@@ -51,7 +55,8 @@ curl -X POST \
     "api_key": "YOUR_API_KEY",
     "title": "Your title",
     "city": "Your city",
-    "about": "About your landing page"
+    "about": "About your landing page",
+    "user_webhook_url": "https://yourwebsite.com/webhook"
 }'
 
 ```
@@ -64,7 +69,8 @@ $data = array(
     "api_key" => "YOUR_API_KEY",
     "title" => "Your title",
     "city" => "Your city",
-    "about" => "About your landing page"
+    "about" => "About your landing page",
+    "user_webhook_url" => "https://yourwebsite.com/webhook"
 );
 
 $ch = curl_init($url);
@@ -98,7 +104,8 @@ data = {
     "api_key": "YOUR_API_KEY",
     "title": "Your title",
     "city": "Your city",
-    "about": "About your landing page"
+    "about": "About your landing page",
+    "user_webhook_url": "https://yourwebsite.com/webhook"
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -117,7 +124,8 @@ const data = {
     "api_key": "YOUR_API_KEY",
     "title": "Your title",
     "city": "Your city",
-    "about": "About your landing page"
+    "about": "About your landing page",
+    "user_webhook_url": "https://yourwebsite.com/webhook"
 };
 
 fetch(url, {
@@ -139,11 +147,7 @@ fetch(url, {
 
 ```json Example Response
 {
-	"landing_page": {
-		"description": "<p>This is the landing page paragraph</p>",
-		"image": "Image URL",
-		"pitch": "<p>This is the sales pitch paragraph</p>"	
-    }
+	"response_id": "123456789"
 }
 ```
 
