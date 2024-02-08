@@ -21,6 +21,10 @@ This endpoint will generate social media tweets.
     Any guidelines you want our model to follow? (e.g. no profanity, etc.)
 </ParamField>
 
+<ParamField body="expand" type="boolean">
+    Optional: This is a boolean value to expand the text to a longer caption. Default is false.
+</ParamField>
+
 ### Response
 
 <ResponseField name="tweet" type="string">
@@ -38,7 +42,8 @@ curl -X POST \
     "text": "Your text here",
     "tone": "Friendly",
     "brand_description": "Your brand description",
-    "guidelines": "Some guidelines"
+    "guidelines": "Some guidelines",
+    "expand": true
 }'
 
 ```
@@ -50,7 +55,8 @@ $data = array(
     "text" => "Your text here",
     "tone" => "Friendly",
     "brand_description" => "Your brand description",
-    "guidelines" => "Some guidelines"
+    "guidelines" => "Some guidelines",
+    "expand" => true
 );
 
 $ch = curl_init($url);
@@ -82,7 +88,8 @@ data = {
     "text": "Your text here",
     "tone": "Friendly",
     "brand_description": "Your brand description",
-    "guidelines": "Some guidelines"
+    "guidelines": "Some guidelines",
+    "expand": true
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -100,7 +107,8 @@ const data = {
     "text": "Your text here",
     "tone": "Friendly",
     "brand_description": "Your brand description",
-    "guidelines": "Some guidelines"
+    "guidelines": "Some guidelines",
+    "expand": true
 };
 
 fetch(url, {
