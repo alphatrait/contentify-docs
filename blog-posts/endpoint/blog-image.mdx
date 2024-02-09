@@ -28,7 +28,7 @@ icon: 'image'
 
 ```bash cURL
 curl -X POST \
-  <BASE_URL>/only-image \
+  <BASE_URL>/blog-image \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -41,7 +41,7 @@ curl -X POST \
 
 ```bash PHP
 <?php
-$url = '<BASE_URL>/only-image';
+$url = '<BASE_URL>/blog-image';
 $data = array(
     "guidelines" => "No political content",
     "theme" => "light blue",
@@ -68,7 +68,7 @@ echo $response;
 ```bash Python
 import requests
 
-url = '<BASE_URL>/only-image'
+url = '<BASE_URL>/blog-image'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -85,7 +85,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = '<BASE_URL>/only-image';
+const url = '<BASE_URL>/blog-image';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
