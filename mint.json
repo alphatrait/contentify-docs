@@ -81,6 +81,7 @@
           ]
         },
         "blog-posts/endpoint/key-takeaways",
+        "blog-posts/endpoint/blog-image",
         {
           "group": "Related Blogs",
           "icon": "share-nodes",
