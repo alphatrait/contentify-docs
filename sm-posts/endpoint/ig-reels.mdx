@@ -1,0 +1,115 @@
+
+
+### Body
+
+Get a list of your Instagram reels to repost elsewhere.
+
+<ParamField body="your-username" type="string">
+  What is your username?
+</ParamField>
+
+### Response
+
+<ResponseField name="reels" type="array">
+  List of your reels.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/extract-reels \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "usernamae": "contentify.app"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/extract-reels';
+$data = array(
+    'usernamae' => 'contentify.app'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/extract-reels'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'usernamae': 'contentify.app'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/extract-reels';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    usernamae: 'contentify.app'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "reels": [
+        "https://www.instagram.com/p/CTz3z3YJ9Zz/",
+        "https://www.instagram.com/p/CTz3z3YJ9Zz/",
+        "https://www.instagram.com/p/CTz3z3YJ9Zz/",
+        "https://www.instagram.com/p/CTz3z3YJ9Zz/",
+        "https://www.instagram.com/p/CTz3z3YJ9Zz/"
+    ]
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
