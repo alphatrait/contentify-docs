@@ -1,0 +1,116 @@
+
+### Body
+ 
+This endpoint will generate a description of a video.
+
+<ParamField body="video_url" type="string">
+  This is the video url of the video you want to generate description for.
+</ParamField>
+
+<ParamField body="brand_description" type="string">
+  This is extra information about the brand that the video is for.
+</ParamField>
+
+### Response
+
+<ResponseField name="video_description" type="string">
+  The video description. 
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/describe-video \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "video_url": "https://example.com/video.mp4",
+    "brand_description": "Brand X"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/describe-video';
+$data = array(
+    "video_url" => "https://example.com/video.mp4",
+    "brand_description" => "Brand X"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/describe-video'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "video_url": "https://example.com/video.mp4",
+    "brand_description": "Brand X"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/describe-video';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "video_url": "https://example.com/video.mp4",
+    "brand_description": "Brand X"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"description": "This is the description of the video."
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

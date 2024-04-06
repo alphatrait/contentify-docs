@@ -132,8 +132,10 @@
           "icon": "grid",
           "pages": [
             "sm-posts/endpoint/get-image-description",
+            "sm-posts/endpoint/get-video-description",
             "sm-posts/endpoint/caption-from-text",
             "sm-posts/endpoint/caption-from-image",
+            "sm-posts/endpoint/video-caption",
             "sm-posts/endpoint/tweet-from-text",
             "sm-posts/endpoint/tweet-from-image"
           ]
