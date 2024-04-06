@@ -1,0 +1,124 @@
+
+### Body
+ 
+This endpoint will crop images intuitively and return the cropped image.
+
+<ParamField body="image_url" type="string">
+  This is the image url of the image you want to crop.
+</ParamField>
+
+<ParamField body="width" type="Integer">
+  This the width of the cropped image.
+</ParamField>
+
+<ParamField body="height" type="Integer">
+  This is the height of the cropped image.
+</ParamField>
+
+### Response
+
+<ResponseField name="cropped_image_url" type="string">
+    This is the url of the cropped image.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/smart-crop-image \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "width": 300,
+    "height": 200,
+    "image_url": "https://example.com/image.jpg"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/smart-crop-image';
+$data = array(
+    "width" => 300,
+    "height" => 200,
+    "image_url" => "https://example.com/image.jpg"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/smart-crop-image'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "width": 300,
+    "height": 200,
+    "image_url": "https://example.com/image.jpg"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/smart-crop-image';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "width": 300,
+    "height": 200,
+    "image_url": "https://example.com/image.jpg"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"cropped_image_url": "https://example.com/cropped-image.jpeg"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
