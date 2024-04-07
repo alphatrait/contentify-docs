@@ -23,6 +23,10 @@ description: "This endpoint will generate a paragraph of a blog post for your sp
     These are the previous sections of your blog.
 </ParamField>
 
+<ParamField body="guildlines" type="string">
+  Any guildlines to consider while generating the blog body. Example: No political posts
+</ParamField>
+
 ### Response
 
 <ResponseField name="body" type="string">
@@ -49,7 +53,8 @@ curl -X POST \
     "previous_sections": {
         "Introduction": "This is the introduction section",
         "AI Advancements": "This is the AI advancements section"
-    }
+    },
+    "guidelines": "No political content"
 }'
 
 ```
@@ -68,7 +73,8 @@ $data = array(
     'previous_sections' => array(
         'Introduction' => 'This is the introduction section',
         'AI Advancements' => 'This is the AI advancements section'
-    )
+    ),
+    "guidelines" => "No political content"
 );
 
 $ch = curl_init($url);
@@ -105,7 +111,8 @@ data = {
     'previous_sections': {
         'Introduction': 'This is the introduction section',
         'AI Advancements': 'This is the AI advancements section'
-    }
+    },
+    "guidelines": "No political content"
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -131,7 +138,8 @@ const data = {
     previous_sections: {
         Introduction: 'This is the introduction section',
         'AI Advancements': 'This is the AI advancements section'
-    }
+    },
+    "guidelines": "No political content"
 };
 
 fetch(url, {
