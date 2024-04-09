@@ -44,11 +44,8 @@ curl -X POST \
   -d '{
     "title": "The Future of Technology",
     "keyword": "Innovation",
-    "sections": {
-        "Introduction": "This is the introduction section",
-        "AI Advancements": "This is the AI advancements section",
-        "Impact on Society": "This is the impact on society section"
-    },
+    "sections": [ "Introduction", "AI Advancements", "Impact on Society" ],
+
     "focus_section": "Impact on Society",
     "previous_sections": {
         "Introduction": "This is the introduction section",
@@ -64,11 +61,7 @@ $url = '<BASE_URL>/v2/body';
 $data = array(
     'title' => 'The Future of Technology',
     'keyword' => 'Innovation',
-    'sections' => array(
-        'Introduction' => 'This is the introduction section',
-        'AI Advancements' => 'This is the AI advancements section',
-        'Impact on Society' => 'This is the impact on society section'
-    ),
+    'sections' => array('Introduction','AI Advancements', 'Impact on Society'),
     'focus_section' => 'Impact on Society',
     'previous_sections' => array(
         'Introduction' => 'This is the introduction section',
@@ -102,11 +95,8 @@ headers = {
 data = {
     'title': 'The Future of Technology',
     'keyword': 'Innovation',
-    'sections': {
-        'Introduction': 'This is the introduction section',
-        'AI Advancements': 'This is the AI advancements section',
-        'Impact on Society': 'This is the impact on society section'
-    },
+    'sections': [ 'Introduction', 'AI Advancements', 'Impact on Society' ],
+
     'focus_section': 'Impact on Society',
     'previous_sections': {
         'Introduction': 'This is the introduction section',
@@ -129,11 +119,7 @@ const headers = {
 const data = {
     title: 'The Future of Technology',
     keyword: 'Innovation',
-    sections: {
-        Introduction: 'This is the introduction section',
-        'AI Advancements': 'This is the AI advancements section',
-        'Impact on Society': 'This is the impact on society section'
-    },
+    sections: [ 'Introduction', 'AI Advancements', 'Impact on Society' ],
     focus_section: 'Impact on Society',
     previous_sections: {
         Introduction: 'This is the introduction section',
