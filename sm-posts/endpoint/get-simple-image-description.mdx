@@ -1,0 +1,112 @@
+
+### Body
+ 
+This endpoint will generate simple description of an image.
+
+<ParamField body="image_url" type="string">
+  This is the image url of the image you want to generate description for.
+</ParamField>
+
+<ParamField body="business_description" type="string">
+  The description of the business that the image is associated with.
+</ParamField>
+
+### Response
+
+<ResponseField name="description" type="string">
+  A brief description of the image.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/simple-image-description \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "image_url": "https://example-image-url.com",
+    "business_description": "A restaurant serving traditional cuisine"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/simple-image-description';
+$data = array(
+    'image_url' => 'https://example-image-url.com',
+    'business_description' => 'A restaurant serving traditional cuisine'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/simple-image-description'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'image_url': 'https://example-image-url.com',
+    'business_description': 'A restaurant serving traditional cuisine'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/simple-image-description';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    image_url: 'https://example-image-url.com',
+    business_description: 'A restaurant serving traditional cuisine'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"description": "This is the description of the image."
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
