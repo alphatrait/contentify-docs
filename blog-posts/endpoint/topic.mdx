@@ -7,6 +7,9 @@ description: "This endpoint will generate a list of ideas for a topic."
   This is the topic for which you want to generate ideas.
 </ParamField>
 
+<ParamField body="guidelines" type="string">
+  This is the guidelines.
+</ParamField>
 
 ### Response
 
@@ -22,7 +25,8 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "topic": "sustainable living"
+    "topic": "sustainable living",
+    "guidelines": "This is the guidelines."
 }'
 
 ```
@@ -30,7 +34,8 @@ curl -X POST \
 ```bash PHP
 $url = '<BASE_URL>/post-ideas';
 $data = array(
-    'topic' => 'sustainable living'
+    'topic' => 'sustainable living',
+    'guidelines' => 'This is the guidelines.'
 );
 
 $ch = curl_init($url);
@@ -56,7 +61,8 @@ headers = {
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    'topic': 'sustainable living'
+    'topic': 'sustainable living',
+    'guidelines': 'This is the guidelines.'
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -71,7 +77,8 @@ const headers = {
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    topic: 'sustainable living'
+    topic: 'sustainable living',
+    guidelines: 'This is the guidelines.'
 };
 
 fetch(url, {

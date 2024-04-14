@@ -7,6 +7,10 @@ description: "Generate call to action header, body and button text"
   This is the CTA url where you want the user to be redirected to when they click on the button.
 </ParamField>
 
+<ParamField body="url" type="string">
+  This is the CTA guidelines.
+</ParamField>
+
 
 ### Response
 
@@ -29,7 +33,11 @@ description: "Generate call to action header, body and button text"
 curl -X POST \
      -H "X-API-Key: YOUR_API_KEY_HERE" \
      -H "Content-Type: application/json" \
-     -d '{"url": "http://example.com"}' \
+     -d '{
+        "url": "http://example.com",
+        "guidelines": "This is the CTA guidelines."
+        }' \
+    
      <BASE_URL>/cta-text
 
 ```
@@ -37,7 +45,8 @@ curl -X POST \
 ```bash PHP
 $url = '<BASE_URL>/cta-text';
 $data = array(
-    'url' => 'https://example.com'
+    'url' => 'https://example.com',
+    'guidelines' => 'This is the CTA guidelines.'
 );
 
 $ch = curl_init($url);
@@ -63,7 +72,8 @@ headers = {
 }
 
 data = {
-    'url': 'http://example.com'
+    'url': 'http://example.com',
+    'guidelines': 'This is the CTA guidelines.'
 }
 
 response = requests.post('<BASE_URL>/cta-text', headers=headers, json=data)
@@ -80,7 +90,8 @@ else:
 ```bash JavaScript
 const url = '<BASE_URL>/cta-text';
 const data = {
-    url: 'http://example.com'
+    url: 'http://example.com',
+    guidelines: 'This is the CTA guidelines.'
 };
 
 fetch(url, {
