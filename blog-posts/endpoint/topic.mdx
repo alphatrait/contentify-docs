@@ -1,6 +1,6 @@
 ---
 title: "Topics"
-description: "This endpoint will generate a list of ideas for a topic."
+description: "This endpoint will generate a list of headlines"
 ---
 
 <ParamField body="topic" type="string">
@@ -21,7 +21,7 @@ description: "This endpoint will generate a list of ideas for a topic."
 
 ```bash cURL
 curl -X POST \
-  <BASE_URL>/post-ideas \
+  <BASE_URL>/topics \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -32,7 +32,7 @@ curl -X POST \
 ```
 
 ```bash PHP
-$url = '<BASE_URL>/post-ideas';
+$url = '<BASE_URL>/topics';
 $data = array(
     'topic' => 'sustainable living',
     'guidelines' => 'This is the guidelines.'
@@ -55,7 +55,7 @@ curl_close($ch);
 ```bash Python
 import requests
 
-url = '<BASE_URL>/post-ideas'
+url = '<BASE_URL>/topics'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -71,7 +71,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = '<BASE_URL>/post-ideas';
+const url = '<BASE_URL>/topics';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -98,31 +98,14 @@ fetch(url, {
 
 ```json Response
 {
-    "post_ideas": {
-        "Digital marketing": {
-            "quicktips": [
-                "Create a strong content marketing strategy",
-                "Utilize social media platforms effectively"
-            ],
-            "industry_myths": [
-                "SEO is all you need for digital marketing success",
-                "Email marketing is outdated"
-            ],
-            "common_mistakes": [
-                "Ignoring data analytics",
-                "Not optimizing for mobile"
-            ],
-            "common_questions": [
-                "What is digital marketing?",
-                "How does digital marketing differ from traditional marketing?",
-                "What are the key components of a successful digital marketing strategy?"
-            ],
-            "actionable_systems": [
-                "Developing a content calendar",
-                "Optimizing social media profiles"
-            ]
-        }
-    }
+    "topic": [
+		"Future of AI",
+		"AI in Healthcare",
+		"AI in Education",
+		"AI in Finance",
+		"AI in Robotics",
+		"AI in Marketing"
+    ]
 }
 ```
 
