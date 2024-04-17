@@ -8,9 +8,6 @@ icon: 'ranking-star'
     This is the url of your website you want to optimize. You either have to pass this or website_copy. 
 </ParamField>
 
-<ParamField body="website_copy" type="string">
-    This is the website copy of your website you want to optimize. You either have to pass this or website_copy.
-</ParamField>
 
 ### Response
 
@@ -34,17 +31,15 @@ curl -X POST \
   <BASE_URL>/seo-optimize \
   -H 'Content-Type: application/json' \
   -d '{
-    "url": "https://example-website-url.com",
-    "website_copy": "This is the website copy of your website you want to optimize. You either have to pass this or website_copy."
-}'
+    "url": "https://example-website-url.com"
+    }'
 
 ```
 
 ```bash PHP
 $url = '<BASE_URL>/seo-optimize';
 $data = array(
-    'url' => 'https://example-website-url.com',
-    'website_copy' => 'This is the website copy of your website you want to optimize. You either have to pass this or website_copy.'
+    'url' => 'https://example-website-url.com'
 );
 
 $ch = curl_init($url);
@@ -65,8 +60,7 @@ import requests
 
 url = '<BASE_URL>/seo-optimize'
 data = {
-    'url': 'https://example-website-url.com',
-    'website_copy': 'This is the website copy of your website you want to optimize. You either have to pass this or website_copy.'
+    'url': 'https://example-website-url.com'
 }
 
 response = requests.post(url, json=data)
@@ -77,8 +71,7 @@ print(response.json())
 ```bash JavaScript
 const url = '<BASE_URL>/seo-optimize';
 const data = {
-    url: 'https://example-website-url.com',
-    website_copy: 'This is the website copy of your website you want to optimize. You either have to pass this or website_copy.'
+    url: 'https://example-website-url.com'
 };
 
 fetch(url, {
