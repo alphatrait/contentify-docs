@@ -1,0 +1,121 @@
+
+### Body
+ 
+This endpoint will crop videos intuitively and return the cropped video.
+
+<ParamField body="video_url" type="string">
+  This is the video url of the video you want to crop.
+</ParamField>
+
+<ParamField body="ratio" type="Integer">
+  This the the ratio of the cropped video. For example, 16:9, 4:3, 1:1, etc.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="cropped_video_url" type="string">
+    This is the url of the cropped video.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/smart-crop-video \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "width": 300,
+    "height": 200,
+    "video_url": "https://example.com/video.mp4"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/smart-crop-video';
+$data = array(
+    "width" => 300,
+    "height" => 200,
+    "video_url" => "https://example.com/video.mp4"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/smart-crop-video'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "width": 300,
+    "height": 200,
+    "video_url": "https://example.com/video.mp4"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/smart-crop-video';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "width": 300,
+    "height": 200,
+    "video_url": "https://example.com/video.mp4"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"cropped_video_url": "https://example.com/cropped-video.mp4"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
