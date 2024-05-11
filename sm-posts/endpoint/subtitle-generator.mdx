@@ -1,0 +1,130 @@
+
+
+### Body
+
+This endpoint will generate subtitle for a video.
+
+<ParamField body="video_type" type="string">
+    Choose between "reel", "story", or "post". Reels and stories are vertical videos, while posts are square or horizontal videos.
+</ParamField>
+
+
+<ParamField body="video_url" type="string">
+    The URL of the video you want to generate subtitles for.
+</ParamField>
+
+<ParamField body="color" type="string">
+    The heighlight color of the subtitles. We automatically heighlight the spoken words in the subtitles. Write your color in plain English (e.g. "red", "blue", etc.)
+</ParamField>
+
+
+### Response
+
+<ResponseField name="video_output_url" type="string">
+    The URL of the video with subtitles.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/generate-subtitle \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "video_type": "movie",
+    "video_url": "https://example.com/video.mp4",
+    "color": "blue"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/generate-subtitle';
+$data = array(
+    "video_type" => "movie",
+    "video_url" => "https://example.com/video.mp4",
+    "color" => "blue"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/generate-subtitle'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "video_type": "movie",
+    "video_url": "https://example.com/video.mp4",
+    "color": "blue"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/generate-subtitle';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "video_type": "movie",
+    "video_url": "https://example.com/video.mp4",
+    "color": "blue"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "video_output_url": "https://example.com/video_with_subtitle.mp4"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

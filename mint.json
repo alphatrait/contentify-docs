@@ -140,7 +140,8 @@
             "sm-posts/endpoint/tweet-from-text",
             "sm-posts/endpoint/tweet-from-image",
             "sm-posts/endpoint/smart-crop-image",
-            "sm-posts/endpoint/smart-crop-video"
+            "sm-posts/endpoint/smart-crop-video",
+            "sm-posts/endpoint/subtitle-generator"
           ]
         },
         {
