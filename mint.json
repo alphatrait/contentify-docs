@@ -90,15 +90,6 @@
             "blog-posts/endpoint/list-of-blogs"
           ]
         },
-        {
-          "group": "Landing Pages",
-          "icon": "layer-group",
-          "pages": [
-            "blog-posts/endpoint/niches-and-titles",
-            "blog-posts/endpoint/landing-page-generator", 
-            "blog-posts/endpoint/get-response"
-          ]
-        },
         "blog-posts/endpoint/page-optimizer"
       ]
     },
@@ -162,8 +153,10 @@
           "group": "Video Posts",
           "icon": "video",
           "pages": [
+            "sm-posts/endpoint/get-response",
             "sm-posts/endpoint/sample-video",
-            "sm-posts/endpoint/video-title"
+            "sm-posts/endpoint/video-title",
+            "sm-posts/endpoint/generated-slides"
           ]
         },
         {

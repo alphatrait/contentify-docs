@@ -1,0 +1,96 @@
+
+### Body
+
+Videos generally take longer to generate than other types of content. Use this endpoint to check the status of the video generation task.
+
+### Response
+
+<ResponseField name="_id" type="string">
+    This is the task ID to check the status of the video generation.
+</ResponseField>
+
+<ResponseField name="result_url" type="string">
+    This is the URL of the generated video.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+    The status of the video generation task.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X GET \
+  <BASE_URL>/get-response/<response_id> \
+  -H 'X-API-Key: YOUR_API_KEY'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/get-response/<response_id>';
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/get-response/<response_id>'
+headers = {
+    'X-API-Key': 'YOUR_API_KEY'
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/get-response/<response_id>';
+const headers = {
+    'X-API-Key': 'YOUR_API_KEY'
+};
+
+fetch(url, {
+    method: 'GET',
+    headers: headers
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"_id": "6681f75hgh56d74d93e4f",
+	"result_url": "Video URL",
+	"status": "completed"
+}
+```
+
+</ResponseExample>
+
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

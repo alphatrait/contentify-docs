@@ -1,0 +1,152 @@
+
+<iframe
+  width="500"
+  height="900"
+  src="https://youtube.com/shorts/dcGxbBPR_O8?feature=share"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### Body
+
+Generate social media video post with your branding and subtitle.
+
+
+<ParamField body="article" type="string">
+    The content you want to convert into a video.
+</ParamField>
+
+<ParamField body="branding" type="string">
+    Your branding colors, shapes, styles in plain english.
+</ParamField>
+
+<ParamField body="voice_id" type="string">
+    Your desired voice ID for the video. [Fine voice IDs here](https://dev.contentify.app/sm-posts/endpoint/get-all-voices)
+</ParamField>
+
+<ParamField body="guidelines" type="string">
+    Any guidelines to consider while generating the video in plain english.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="message" type="string">
+  This is the confirmation that we have received your request.
+</ResponseField>
+
+<ResponseField name="task_id" type="string">
+  This is the task ID to check the status of the video generation.
+  Use the [Get Response](https://dev.contentify.app/sm-posts/endpoint/get-response) endpoint to get the status of the task. Videos usually take a few to several minutes to generate.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/generate-slideshow-2 \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "article": "Article content",
+    "branding": "Brand X",
+    "voice_id": "voice_123",
+    "guidelines": "Some guidelines"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/generate-slideshow-2';
+$data = array(
+    "article" => "Article content",
+    "branding" => "Brand X",
+    "voice_id" => "voice_123",
+    "guidelines" => "Some guidelines"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/generate-slideshow-2'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "article": "Article content",
+    "branding": "Brand X",
+    "voice_id": "voice_123",
+    "guidelines": "Some guidelines"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/generate-slideshow-2';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "article": "Article content",
+    "branding": "Brand X",
+    "voice_id": "voice_123",
+    "guidelines": "Some guidelines"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"message": "Video creation task has been queued.",
+	"task_id": "6681fsd234d74d93e4f"
+}
+```
+
+Use the [Get Response](#get-response) endpoint to get the status of the task. Videos usually take a few to several minutes to generate.
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
