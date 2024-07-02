@@ -7,13 +7,10 @@ This endpoint will crop images intuitively and return the cropped image.
   This is the image url of the image you want to crop.
 </ParamField>
 
-<ParamField body="width" type="Integer">
-  This the width of the cropped image.
+<ParamField body="ratio" type="Integer">
+  This is the ratio of the cropped image. The value could be 9:16 for long vertical, 16:9 for horizontal, 1:1 for square, 4:5 for vertical social media, etc.
 </ParamField>
 
-<ParamField body="height" type="Integer">
-  This is the height of the cropped image.
-</ParamField>
 
 ### Response
 
@@ -29,9 +26,8 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "width": 300,
-    "height": 200,
-    "image_url": "https://example.com/image.jpg"
+    "image_url": "https://example.com/image.jpg",
+    "ratio": "4:5"
 }'
 
 ```
@@ -40,9 +36,8 @@ curl -X POST \
 <?php
 $url = '<BASE_URL>/smart-crop-image';
 $data = array(
-    "width" => 300,
-    "height" => 200,
-    "image_url" => "https://example.com/image.jpg"
+    "image_url" => "https://example.com/image.jpg",
+    "ratio" => "4:5"
 );
 
 $ch = curl_init($url);
@@ -71,9 +66,8 @@ headers = {
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    "width": 300,
-    "height": 200,
-    "image_url": "https://example.com/image.jpg"
+    "image_url": "https://example.com/image.jpg",
+    "ratio": "4:5"
 }
 
 response = requests.post(url, headers=headers, json=data)
@@ -88,9 +82,8 @@ const headers = {
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    "width": 300,
-    "height": 200,
-    "image_url": "https://example.com/image.jpg"
+    "image_url": "https://example.com/image.jpg",
+    "ratio": "4:5"
 };
 
 fetch(url, {
