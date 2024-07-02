@@ -1,14 +1,16 @@
 
 
 <iframe
-  width="400"
-  height="700"
-  src="https://www.youtube.com/shorts/dcGxbBPR_O8"
-  title="YouTube video player"
-  frameborder="0"
-  allow=""
-  allowfullscreen
-></iframe>
+    width="400"
+    height="700"
+    src="https://www.youtube.com/embed/dcGxbBPR_O8?si=ux8Z6t70zrjnG9Rg&amp;controls=0" 
+    title="Contentify Marketing AI - Developers" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+
+</iframe>
 
 ### Body
 
@@ -48,7 +50,7 @@ Generate social media video post with your branding and subtitle.
 
 ```bash cURL
 curl -X POST \
-  <BASE_URL>/generate-slideshow-2 \
+  <BASE_URL>/generate-slideshow \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
@@ -62,7 +64,7 @@ curl -X POST \
 
 ```bash PHP
 <?php
-$url = '<BASE_URL>/generate-slideshow-2';
+$url = '<BASE_URL>/generate-slideshow';
 $data = array(
     "article" => "Article content",
     "branding" => "Brand X",
@@ -89,7 +91,7 @@ echo $response;
 ```bash Python
 import requests
 
-url = '<BASE_URL>/generate-slideshow-2'
+url = '<BASE_URL>/generate-slideshow'
 headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
@@ -107,7 +109,7 @@ print(response.json())
 ```
 
 ```bash JavaScript
-const url = '<BASE_URL>/generate-slideshow-2';
+const url = '<BASE_URL>/generate-slideshow';
 const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': 'YOUR_API_KEY'
