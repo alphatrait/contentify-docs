@@ -1,0 +1,133 @@
+
+
+<iframe
+    width="400"
+    height="700"
+    src="https://youtube.com/shorts/lKdGE6cvzyA" 
+    title="Contentify Marketing AI - Developers" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+
+</iframe>
+
+### Body
+
+Generate social media video with a single image.
+
+
+<ParamField body="image_url" type="string">
+    The content you want to convert into a video.
+</ParamField>
+
+<ParamField body="size" type="string">
+    Image ratio for the video scuh as 9:16, 16:9 or 1:1.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="motion_image" type="string">
+  This is the URL of the generated video.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/generate-motion-image \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "image_url": "https://example.com/image.jpg",
+    "size": "16:9"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/generate-motion-image';
+$data = array(
+    "image_url" => "https://example.com/image.jpg",
+    "size" => "16:9"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/generate-motion-image'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "image_url": "https://example.com/image.jpg",
+    "size": "16:9"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/generate-motion-image';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "image_url": "https://example.com/image.jpg",
+    "size": "16:9"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"motion_image": "https://contentify.app/video.mp4",
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;

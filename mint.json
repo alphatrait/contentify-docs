@@ -156,7 +156,8 @@
             "sm-posts/endpoint/get-response",
             "sm-posts/endpoint/sample-video",
             "sm-posts/endpoint/video-title",
-            "sm-posts/endpoint/generated-slides"
+            "sm-posts/endpoint/generated-slides",
+            "sm-posts/endpoint/generated-motion-image"
           ]
         },
         {
