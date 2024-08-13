@@ -100,12 +100,6 @@
       ]
     },
     {
-      "group": "Get Started",
-      "pages": [
-        "personalized-video/authentication"
-      ]
-    },
-    {
       "group": "Endpoints",
       "pages": [
         {
@@ -172,27 +166,6 @@
           "icon": "rocket",
           "pages": [
             "sm-posts/endpoint/hashtags"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Get Started",
-      "pages": [ 
-        "integrations/authentication"
-      ]
-    },
-    {
-      "group": "Endpoints",
-      "pages": [
-        {
-          "group": "WordPress",
-          "icon": "wordpress",
-          "pages": [
-            "integrations/endpoint/all-blogs", 
-            "integrations/endpoint/create-post", 
-            "integrations/endpoint/update-blog", 
-            "integrations/endpoint/get-website-title"
           ]
         }
       ]
