@@ -1,0 +1,117 @@
+---
+title: "Calculator Generator"
+description: "This endpoint generates a calculator section for your page or article."
+icon: 'calculator'
+---
+
+<ParamField body="article" type="string">
+    This is the article or page content you want to generate a calculator for.
+</ParamField>
+
+<ParamField body="guidelines" type="string">
+    This is an optional field that you can use to provide guidelines for the calculator.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="html" type="string">
+    This is the generated calculator section in HTML format.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/calculator \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "article": "The Importance of SEO",
+    "guidelines": "Follow best practices for content optimization"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/calculator';
+$data = array(
+    'article' => 'The Importance of SEO',
+    'guidelines' => 'Follow best practices for content optimization'
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+echo $response;
+
+```
+
+```bash Python
+import requests
+import json
+
+url = '<BASE_URL>/calculator'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'article': 'The Importance of SEO',
+    'guidelines': 'Follow best practices for content optimization'
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/calculator';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    article: 'The Importance of SEO',
+    guidelines: 'Follow best practices for content optimization'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+	"html": "<div class='contentify-calculator>...</div>"
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
