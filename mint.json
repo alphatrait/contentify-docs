@@ -91,7 +91,8 @@
           ]
         },
         "blog-posts/endpoint/page-optimizer",
-        "blog-posts/endpoint/calculator-generator"
+        "blog-posts/endpoint/calculator-generator",
+        "blog-posts/endpoint/youtube-video"
       ]
     },
     {

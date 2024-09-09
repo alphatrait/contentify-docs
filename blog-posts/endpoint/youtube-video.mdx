@@ -1,0 +1,104 @@
+---
+title: "Find YouTube Video"
+description: "This endpoint finds a relevant YouTube video for your article or page."
+icon: 'youtube'
+---
+
+<ParamField body="title" type="string">
+    This is the title or topic of your article or page for which you want to find a relevant YouTube video.
+</ParamField>
+
+### Response
+
+<ResponseField name="youtube_embed" type="string">
+    This is the HTML embed code for the relevant YouTube video.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+<BASE_URL>/find-youtube-video \
+-H 'Content-Type: application/json' \
+-H 'X-API-Key: YOUR_API_KEY' \
+-d '{
+"title": "Introduction to Machine Learning"
+}'
+
+```
+
+```bash PHP
+$url = '<BASE_URL>/find-youtube-video';
+$data = array(
+'title' => 'Introduction to Machine Learning'
+);
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+'Content-Type: application/json',
+'X-API-Key: YOUR_API_KEY'
+));
+$response = curl_exec($ch);
+curl_close($ch);
+echo $response;
+
+
+```
+
+```bash Python
+import requests
+import json
+url = '<BASE_URL>/find-youtube-video'
+headers = {
+'Content-Type': 'application/json',
+'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+'title': 'Introduction to Machine Learning'
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/find-youtube-video';
+const headers = {
+'Content-Type': 'application/json',
+'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+title: 'Introduction to Machine Learning'
+};
+fetch(url, {
+method: 'POST',
+headers: headers,
+body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+    "youtube_embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"
+}
+```
+
+</ResponseExample>
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
