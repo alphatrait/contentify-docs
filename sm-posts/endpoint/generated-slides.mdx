@@ -25,6 +25,14 @@ Generate social media video post with your branding and subtitle.
     Your branding colors, shapes, styles in plain english.
 </ParamField>
 
+<ParamField body="tone" type="string">
+    The tone of the video.
+</ParamField>
+
+<ParamField body="brand_description" type="string">
+    The description of the branding.
+</ParamField>
+
 <ParamField body="voice_id" type="string">
     Your desired voice ID for the video. [Fine voice IDs here](https://dev.contentify.app/sm-posts/endpoint/get-all-voices)
 </ParamField>
@@ -56,6 +64,8 @@ curl -X POST \
   -d '{
     "article": "Article content",
     "branding": "Brand X",
+    "brand_description": "Brand X",
+    "tone": "Brand X",
     "voice_id": "voice_123",
     "guidelines": "Some guidelines"
 }'
@@ -68,6 +78,8 @@ $url = '<BASE_URL>/generate-slideshow';
 $data = array(
     "article" => "Article content",
     "branding" => "Brand X",
+    "brand_description" => "Brand X",
+    "tone" => "Brand X",
     "voice_id" => "voice_123",
     "guidelines" => "Some guidelines"
 );
@@ -99,6 +111,8 @@ headers = {
 data = {
     "article": "Article content",
     "branding": "Brand X",
+    "brand_description": "Brand X",
+    "tone": "Brand X",
     "voice_id": "voice_123",
     "guidelines": "Some guidelines"
 }
@@ -117,6 +131,8 @@ const headers = {
 const data = {
     "article": "Article content",
     "branding": "Brand X",
+    "brand_description": "Brand X",
+    "tone": "Brand X",
     "voice_id": "voice_123",
     "guidelines": "Some guidelines"
 };
