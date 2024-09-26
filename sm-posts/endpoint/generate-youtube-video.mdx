@@ -1,0 +1,135 @@
+
+### Body
+ 
+This endpoint will generate a youtube video from a blog post.
+
+<ParamField body="url" type="string">
+  This is the url of the blog post you want to generate a youtube video for.
+</ParamField>
+
+<ParamField body="voice_id" type="string">
+  This is the voice id of the voice you want to use to generate the youtube video.
+</ParamField>
+
+<ParamField body="script_guidelines" type="string">
+  OPTIONAL:This is the guidelines for the script of the youtube video.
+</ParamField>
+
+<ParamField body="image_guidelines" type="string">
+  OPTIONAL:This is the guidelines for the image of the youtube video.
+</ParamField>
+
+### Response
+
+<ResponseField name="video_url" type="string">
+  The url of the video to post on youtube.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+  <BASE_URL>/youtube-video \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: YOUR_API_KEY' \
+  -d '{
+    "url": "https://www.youtube.com/watch?v=example",
+    "voice_id": "voice_123",
+    "script_guidelines": "Some guidelines for the script",
+    "image_guidelines": "Some guidelines for images"
+}'
+
+```
+
+```bash PHP
+<?php
+$url = '<BASE_URL>/youtube-video';
+$data = array(
+    "url" => "https://www.youtube.com/watch?v=example",
+    "voice_id" => "voice_123",
+    "script_guidelines" => "Some guidelines for the script",
+    "image_guidelines" => "Some guidelines for images"
+);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+
+
+```
+
+```bash Python
+import requests
+
+url = '<BASE_URL>/youtube-video'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    "url": "https://www.youtube.com/watch?v=example",
+    "voice_id": "voice_123",
+    "script_guidelines": "Some guidelines for the script",
+    "image_guidelines": "Some guidelines for images"
+}
+
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+
+
+```
+
+```bash JavaScript
+const url = '<BASE_URL>/youtube-video';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    "url": "https://www.youtube.com/watch?v=example",
+    "voice_id": "voice_123",
+    "script_guidelines": "Some guidelines for the script",
+    "image_guidelines": "Some guidelines for images"
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+	"video_url": "https://www.youtube.com/watch?v=example"
+}
+```
+
+</ResponseExample>
+
+
+&nbsp;
+#
+&nbsp;
+#
+&nbsp;
