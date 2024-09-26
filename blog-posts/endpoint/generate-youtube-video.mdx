@@ -1,7 +1,8 @@
-
-### Body
- 
-This endpoint will generate a youtube video from a blog post.
+---
+title: "Generate YouTube Video"
+description: "This endpoint will generate a youtube video from a blog post."
+icon: 'youtube'
+---
 
 <ParamField body="url" type="string">
   This is the url of the blog post you want to generate a youtube video for.
@@ -121,7 +122,7 @@ fetch(url, {
 
 ```json Response
 {
-	"video_url": "https://www.youtube.com/watch?v=example"
+	"video_url": "https://www.example.com/video.mp4"
 }
 ```
 
