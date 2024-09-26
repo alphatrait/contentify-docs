@@ -3,8 +3,8 @@
  
 This endpoint will generate a youtube video from a blog post.
 
-<ParamField body="url" type="string">
-  This is the url of the blog post you want to generate a youtube video for.
+<ParamField body="article" type="string">
+  This is the article you want to generate a youtube video for.
 </ParamField>
 
 <ParamField body="voice_id" type="string">
@@ -33,7 +33,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'X-API-Key: YOUR_API_KEY' \
   -d '{
-    "url": "https://www.youtube.com/watch?v=example",
+    "article": "Some article text.",
     "voice_id": "voice_123",
     "script_guidelines": "Some guidelines for the script",
     "image_guidelines": "Some guidelines for images"
@@ -45,7 +45,7 @@ curl -X POST \
 <?php
 $url = '<BASE_URL>/youtube-video';
 $data = array(
-    "url" => "https://www.youtube.com/watch?v=example",
+    "article" => "Some article text.",
     "voice_id" => "voice_123",
     "script_guidelines" => "Some guidelines for the script",
     "image_guidelines" => "Some guidelines for images"
@@ -78,7 +78,7 @@ headers = {
     'X-API-Key': 'YOUR_API_KEY'
 }
 data = {
-    "url": "https://www.youtube.com/watch?v=example",
+    "article": "Some article text.",
     "voice_id": "voice_123",
     "script_guidelines": "Some guidelines for the script",
     "image_guidelines": "Some guidelines for images"
@@ -97,7 +97,7 @@ const headers = {
     'X-API-Key': 'YOUR_API_KEY'
 };
 const data = {
-    "url": "https://www.youtube.com/watch?v=example",
+    "article": "Some article text.",
     "voice_id": "voice_123",
     "script_guidelines": "Some guidelines for the script",
     "image_guidelines": "Some guidelines for images"
@@ -121,7 +121,7 @@ fetch(url, {
 
 ```json Response
 {
-	"video_url": "https://www.example.com/video.mp4"
+	"video_url": "https://example.com/video.mp4"
 }
 ```
 
