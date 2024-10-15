@@ -92,8 +92,15 @@
         },
         "blog-posts/endpoint/page-optimizer",
         "blog-posts/endpoint/calculator-generator",
-        "blog-posts/endpoint/youtube-video",
-        "blog-posts/endpoint/generate-youtube-video"
+        {
+          "group": "YouTube",
+          "icon": "youtube",
+          "pages": [
+            "blog-posts/endpoint/youtube-video",
+            "blog-posts/endpoint/generate-youtube-video",
+            "blog-posts/endpoint/youtube-to-blog"
+          ]
+        }
       ]
     },
     {

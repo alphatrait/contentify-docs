@@ -1,0 +1,106 @@
+---
+title: "YouTube to Blog Sections"
+description: "This endpoint converts a YouTube video into blog sections and bodies."
+icon: 'youtube'
+---
+
+<ParamField body="url" type="string">
+    This is the URL of the YouTube video you want to convert into blog sections.
+</ParamField>
+
+### Response
+
+<ResponseField name="sections" type="array">
+    An array of strings representing the blog section titles.
+</ResponseField>
+
+<ResponseField name="bodies" type="array">
+    An array of strings representing the content for each blog section.
+</ResponseField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST \
+<BASE_URL>/youtube-to-blog \
+-H 'Content-Type: application/json' \
+-H 'X-API-Key: YOUR_API_KEY' \
+-d '{
+"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}'
+```
+
+```php PHP
+$url = '<BASE_URL>/youtube-to-blog';
+$data = array(
+    'url' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+);
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'X-API-Key: YOUR_API_KEY'
+));
+$response = curl_exec($ch);
+curl_close($ch);
+echo $response;
+```
+
+```python Python
+import requests
+import json
+
+url = '<BASE_URL>/youtube-to-blog'
+headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+}
+data = {
+    'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+```
+
+```javascript JavaScript
+const url = '<BASE_URL>/youtube-to-blog';
+const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'YOUR_API_KEY'
+};
+const data = {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+};
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Example Response
+{
+    "sections": [
+        "Introduction",
+        "Main Points",
+        "Conclusion"
+    ],
+    "bodies": [
+        "This section introduces the topic of the video...",
+        "The main points discussed in the video are...",
+        "In conclusion, the video summarizes..."
+    ]
+}
+```
+
+</ResponseExample>
+
